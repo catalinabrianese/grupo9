@@ -6,6 +6,8 @@ Proyecto e-commerce
 - 
 - Listado de 5 páginas referentes en las que se basa su proyecto:
 - https://www.malapeluqueria.com/
+- https://www.lorealparis.com.ar/
+- 
 - Listado del grupo con una breve descripción de cada uno:
 - Catalina Brianese
 - Nicolas Diaz Calens
