@@ -5,7 +5,7 @@ Proyecto e-commerce
 - Publico objetivo:
 - 
 - Listado de 5 páginas referentes en las que se basa su proyecto:
-- 
+- https://www.malapeluqueria.com/
 - Listado del grupo con una breve descripción de cada uno:
 - Catalina Brianese
 - Nicolas Diaz Calens
