@@ -13,7 +13,7 @@ Proyecto e-commerce
 - Listado del grupo con una breve descripción de cada uno:
 - Catalina Brianese: tengo 29 años, estudié dos años ingeniería en computación y abandoné, después estudié profesorado de matemática, me recibí en 2016, y ejerzo como profesora hace 5 años. Estoy casada, mi marido tiene una peluquería unisex, cuando empezó la pandemia quise armarle una página web y recurrí a tiendanube. Pero no se manejarla bien, les propuse a Nicolás y a Franco hacer el proyecto e-commerce con esta temática.
 - Nicolas Diaz Calens: Tengo 21 años. tengo un curso hecho en HTLM y CSS. Quise arrancar la carrera de Ingeniería en Sistemas pero me di cuenta que quería aprender directamente a programar y decidí arrancar este curso. Me gusta mucho el deporte en general.
-- Franco Puma:
+- Franco Puma: Tengo 25 años, nunca me meti en la informatica hasta este año que me llamo la atencion la idea de poder construir algo de cero, asi que me anote en digital house, me gusta mirar pelis y series.
 - 
 - Link del tablero de trabajo en donde se encuentran trabajando:
 - https://trello.com/b/SvEq1sqK/proyecto-e-commerce
