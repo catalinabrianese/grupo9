@@ -9,5 +9,5 @@ app.listen(3000, () => {
 });
 
 app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname, "/views/vistadedetalledeproducto.html"));
+    res.sendFile(path.join(__dirname, "/views/vistaderegistro.html"));
 });
