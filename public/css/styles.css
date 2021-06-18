@@ -1,0 +1,64 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:violet;
+}
+
+.inicioDeSesion {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.buscador {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#seccionesLink {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.nav-bar{
+    list-style-type: none;
+}
+
+.enlace{
+    text-decoration: none;
+    color: black;
+}
+
+.centroDeLaPag {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.lista-promos {
+    list-style: none;
+}
+
+#a3 {
+    flex-grow: 0.2;
+}
+
+.redSocAtClientes{
+    display: flex;
+    justify-content: start;
+}
+
+.polYTerm {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+}
+
+body{
+    font-family: sans-serif;
+    background-color:navajowhite;
+}
