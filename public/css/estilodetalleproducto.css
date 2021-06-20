@@ -1,6 +1,10 @@
-head {
-    text-align: center;
+*{
+    box-sizing: border-box;
 }
+.main-header{
+    width: auto;
+}
+
 .img[name=imglogo]{
     width: 80px;
     height: 100px;
