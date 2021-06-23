@@ -29,8 +29,8 @@ body{
     text-align: right;
 }
 .main-navbar{
-    display:none;
     justify-content: space-around;
+    display:flex;
 }
 .main-navbar ul{
     list-style: none;
