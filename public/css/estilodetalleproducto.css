@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:"Roboto", sans-serif;
+}
+.main-header{
+    background-color: #EAC926;
+    width: auto;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.main-header-top-bar{
+    justify-content: space-between;
+}
+.imglogo{
+    margin-top: 10px;
+    width: 230px;
+}
+.titulo{
+    text-align: center;
+    justify-content: center;
+}
+.main-header-top-bar #busqueda{
+    width: 20px;
+    height: 40px;
+    text-align: right;
+}
+.main-navbar{
+    justify-content: space-around;
+    display:flex;
+}
+.main-navbar ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.main-navbar a{
+    text-decoration: none;
+    color:#222222;
+    font-weight: 400;
+    display:inline-block;
+    padding: 5px 0;
+    font-size:17px;
+}
+.main{
+    display:block;
+    margin-bottom:40px;
+}
