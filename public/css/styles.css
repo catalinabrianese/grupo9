@@ -1,26 +1,42 @@
+
+header{
+    background-color: #6687cf;
+    margin: 0px;
+    padding: 0px;
+}
 h1 {
     display: flex;
     justify-content: center;
     text-align: center;
     color:#384047;
+    margin-top: 0px;
+    padding: 10px;
 }
 
 .inicioDeSesion {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.registrate {
+    padding-left: 10px;
+    padding-bottom: 3px;
 }
 
 .buscador {
     display: flex;
     justify-content: flex-end;
+    padding-right: 10px;
 }
 
 #seccionesLink {
     display: flex;
     justify-content: center;
     justify-content: space-around;
-    padding: 20px;
+    padding: 10px;
     list-style-type: lower-latin;
 }
 
@@ -60,7 +76,9 @@ h1 {
 }
 
 body{
+    margin-top: 0px;
+    margin: 0px;
     font-family: "Roboto", sans-serif;
-    background-color: #6687cf;
+    background-color: #94ace0;
     color: #384047;
 }
