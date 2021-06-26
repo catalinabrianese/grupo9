@@ -12,32 +12,7 @@
         <title>Seda y brillo</title>
     </head>
     <body>
-        <header class="main-header">
-
-            <div class="main-header-top-bar"></div>
-                <section id="iniciar sesion">
-                    <a href="/vistaderegistro.html"><button>registrarse</button></a>
-                    <br>
-                    <a href="/vistadelogin.html"><button>Iniciar sesión</button></a>
-                </section>
-                <section id="busqueda">
-                    <input></input>
-                    <button id="boton-busqueda"><i class="fas fa-search"></i></button>
-                    <a><i class="fas fa-shopping-cart"></i></a>
-                </section>
-            </div>
-            <h1 class="titulo">Detalle de un producto</h1>
-            <nav class="main-navbar">
-                <ul>
-                    <li><a href="/index.html"><img class="imglogo" src="/img/foto.jpg" alt="Logo de la empresa"></img></a></li>
-                    <li><a href="#">Link sección 1</a></li>
-                    <li><a href="#">Link sección 2</a></li>
-                    <li><a href="#">Link sección 3</a></li>
-                    <li><a href="#">Link sección 4</a></li>
-                    <li><a href="#">Link sección 5</a></li>
-                </ul>
-            </nav>
-        </header>
+        <%- include ("./partials/header") %>
 
         <main class="container">
             <img class="imgproducto" src="/img/imgShampoo.jpg" alt="Foto shampoo"></img>

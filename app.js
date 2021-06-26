@@ -1,18 +1,17 @@
 const express= require("express");
 const app = express();
 const path = require("path");
+const mainRoutes = require("./src/routes/mainRoutes");
 
 app.use(express.static(path.join(__dirname, "./public")));
 
+app.set("view engine", "ejs");
 
 app.listen(3000, () => {
     console.log("server corriendo")
 });
 
 app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname, "/views/index.html"));
+    res.sendFile((__dirname, "./views/index.ejs"));
 });
 
-app.get("/productos/:id", function(req,res){
-    let idProducto=req.params.id;
-})
