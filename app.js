@@ -4,6 +4,9 @@ const path = require("path");
 const mainRouter = require("./src/routes/mainRoutes");
 
 app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 app.use("/", mainRouter);
 app.set("view engine", "ejs");
 

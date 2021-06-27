@@ -1,3 +1,54 @@
 *{
     box-sizing: border-box;
 }
+/**desde acá: agregué el css de styles del index, para que quede bien el header**/
+
+header{
+    background-color: #6687cf;
+    margin: 0px;
+    padding: 0px;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:#384047;
+    margin-top: 0px;
+    padding: 10px;
+  }
+.inicioDeSesion {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.registrate {
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+#seccionesLink {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10px;
+    list-style-type: lower-latin;
+}
+
+.nav-bar{
+    list-style-type: none;
+}
+
+.enlace{
+    text-decoration: none;
+    color: black;
+}
+/**hasta aca**/
