@@ -3,11 +3,13 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
+
 header{
     background-color: #6687cf;
     margin: 0px;
     padding: 0px;
 }
+
 h1 a{
     display: flex;
     justify-content: center;
@@ -36,19 +38,14 @@ h1 a{
     padding-right: 10px;
     align-items: right;
 }
-.search{
-    border-bottom:none;
-}
-.search-buttom{
-    background-color: white;
-    color:#384047;
-}
+
+
 #seccionesLink {
     display: flex;
     justify-content: center;
     justify-content: space-around;
     padding: 10px;
-    list-style-type: lower-latin;
+    font-size:23px;
 }
 
 .nav-bar{
@@ -89,7 +86,6 @@ h1 a{
 body{
     margin-top: 0px;
     margin: 0px;
-    font-family: "Roboto", sans-serif;
     background-color: #94ace0;
     color: #384047;
     align-self:center;
