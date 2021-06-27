@@ -2,6 +2,9 @@ const express= require("express");
 const app = express();
 const path = require("path");
 const mainRouter = require("./src/routes/mainRoutes");
+const methodOverride = require("method-override");
+
+app.use(methodOverride("_method"));
 
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));

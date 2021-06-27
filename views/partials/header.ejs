@@ -1,15 +1,19 @@
 
-<header>
-    <a href="/index.html"><h1>Seda & Brillo</h1></a>
-        <div class="inicioDeSesion"><a class="enlace" href="vistaDeLogin.html">Inicio de sesion</a></div>
-        <div>
-        <a class="enlace" href="vistaDeRegistro.html">Registrate</a>
-        </div>
-        <div class="buscador">
-            <label><strong>Buscar</strong></label>
-            <input>
-            <button id="button"><i class="fas fa-search"></i></button>
-        </div>
+<header class="main-header">
+    <div class="main-header-bar">
+        <a href="/login">Iniciar sesión</a>
+        <a href="/register">Registrarse</a>
+        <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+        <h1><a href="/">Seda & Brillo</a></h1>
+        <nav>
+            <div>
+                <form class="search-form">
+                    <input placeholder="Buscar productos, marcas" type="text" name="keywords" class="search">                            
+                    <button type="submit" class="fas fa-search" class="search-button"></button>
+                </form>
+            </div>
+        </nav>           
         <nav>
             <ul id="seccionesLink">
                 <li class="nav-bar"><a class="enlace" href="">Link seccion1</a></li>
