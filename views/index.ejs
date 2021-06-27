@@ -9,26 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h1>Seda & Brillo</h1>
-            <div class="inicioDeSesion"><a class="enlace" href="./vistadelogin.ejs">Inicio de sesion</a></div>
-            <div class="registrate">
-                <a class="enlace" href="./vistaderegistro.ejs">Registrate</a>
-            </div>
-            <div class="buscador">
-                <label><strong>Buscar</strong></label>
-                <input>
-            </div>
-            <nav>
-                <ul id="seccionesLink">
-                    <li class="nav-bar"><a class="enlace" href="">Link seccion1</a></li>
-                    <li class="nav-bar"><a class="enlace" href="">Link seccion2</a></li>
-                    <li class="nav-bar"><a class="enlace" href="">Link seccion3</a></li>
-                    <li class="nav-bar"><a class="enlace" href="">Link seccion4</a></li>
-                    <li class="nav-bar"><a class="enlace" href="">Link seccion5</a></li>
-                </ul>
-            </nav>
-        </header>
+        <%- include ("./partials/header") %>
         <section class="centroDeLaPag">
             <article>
                 <h4>Dale un vistazo a nuestros ultimos produtos</h4>

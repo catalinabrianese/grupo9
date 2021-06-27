@@ -6,11 +6,11 @@
 
   /**agregué el css de styles del index, para que quede bien el header**/
 
-  header{
+header{
     background-color: #6687cf;
     margin: 0px;
     padding: 0px;
-  }
+}
 h1 {
     display: flex;
     justify-content: center;
@@ -73,7 +73,7 @@ h1 {
     border-radius: 8px;
   }
   
-  body.h1 {
+  h1 {
     margin: 0 0 30px 0;
     text-align: center;
   }
@@ -108,7 +108,7 @@ h1 {
     border-radius: 2px;
   }
   
-  button {
+  .button2 {
     padding: 19px 39px 18px 39px;
     color: #ffffff;
     background-color: #03264c;
