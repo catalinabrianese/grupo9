@@ -8,13 +8,14 @@ header{
     margin: 0px;
     padding: 0px;
   }
-  h1 {
+h1 {
     display: flex;
     justify-content: center;
     text-align: center;
     color:#384047;
     margin-top: 0px;
     padding: 10px;
+    text-decoration: none;
   }
 .inicioDeSesion {
     display: flex;
