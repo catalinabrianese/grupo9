@@ -12,11 +12,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use("/", mainRouter);
-app.us("/user", userRouter);
+app.use("/user", userRouter);
 app.set("view engine", "ejs");
 
 app.listen(3000, () => {
-    console.log("server corriendo")
+    console.log("server corriendo");
 });
 
 
