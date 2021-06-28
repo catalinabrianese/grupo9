@@ -15,6 +15,7 @@ module.exports={
             domicilio: req.body.Domicilio,
         }
         //GUARDAR USUARIO
+        res.redirect("index");
     },
     perfilUsuario: (req,res)=>{
         res.render("./users/perfil");
