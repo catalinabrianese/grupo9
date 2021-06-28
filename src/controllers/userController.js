@@ -1,3 +1,5 @@
+const { response } = require("express")
+
 module.exports={
     guardarUsuario: (req,res)=>{
         let usuario={
@@ -14,5 +16,8 @@ module.exports={
         }
         //GUARDAR USUARIO
     },
+    perfilUsuario: (req,res)=>{
+        res.render("./users/perfil");
+    }
 
 }

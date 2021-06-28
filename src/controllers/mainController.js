@@ -3,13 +3,13 @@ module.exports={
         res.render("index");
     },
     register: (req,res)=>{
-        res.render("vistaderegistro");
+        res.render("./users/vistaderegistro");
     },
     products:(req,res)=>{
-        res.render("vistadedetalledeproducto");
+        res.render("./products/vistadedetalledeproducto");
     },
     login:(req,res)=>{
-        res.render("vistadelogin")
+        res.render("./users/vistadelogin");
     },
     carrito: (req,res)=>{
         res.render("vistadecarrito");
