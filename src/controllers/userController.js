@@ -19,6 +19,9 @@ module.exports={
     },
     perfilUsuario: (req,res)=>{
         res.render("./users/perfil");
+    },
+    login:(req,res)=>{
+        
     }
 
 }

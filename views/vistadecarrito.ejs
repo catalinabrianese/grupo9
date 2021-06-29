@@ -4,21 +4,33 @@
         <link rel="stylesheet" href="/css/styles.css"></link>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito</title>
         <link rel="stylesheet" href="normalize.css" />
         <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
     </head>
-    <%- include ("./partials/header") %>
-    <section>
-        <article>
-            <img src="/img/shampoo-color-protect.jpg" alt="Titulo del producto">
-            <h3>Titulo del producto</h3>
-            <p>Bajada del producto</p>
-        </article>
-        <article>
-            <img src="/img/acondicionador-color-protect-.jpg" alt="Titulo del producto">
-            <h3>Titulo del producto</h3>
-            <p>Bajada del producto</p>
-        </article>
-    </section>
+    <body>
+        <%- include ("./partials/header") %>
+
+        <fieldset>
+            <section>
+                <h1>Carrito</h1>
+                <br>
+                <article class="centroDeLaPag">
+                    <img src="/img/shampoo-color-protect.jpg" alt="Titulo del producto">
+                    <div>
+                        <h3>SHAMPOO COLOR PROTECT</h3>
+                        <p>Bajada del producto</p>
+                    </div>
+                </article>
+                <article class="centroDeLaPag">
+                    <img src="/img/acondicionador-color-protect-.jpg" alt="Titulo del producto">
+                    <div>
+                        <h3>ACONDICIONADOR COLOR PROTECT</h3>
+                        <p>Bajada del producto</p>
+                    </div>
+                </article>
+            </section>
+        </fieldset>
+    </body>
 </html>

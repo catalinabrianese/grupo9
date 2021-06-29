@@ -15,6 +15,10 @@ app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.set("view engine", "ejs");
 
+app.use((req,res,next)=>{
+    res.status(404).render("not-found");
+});
+
 app.listen(3000, () => {
     console.log("server corriendo");
 });
