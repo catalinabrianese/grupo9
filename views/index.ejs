@@ -13,9 +13,17 @@
         <%- include ("./partials/header") %>
         <section class="centroDeLaPag">
             <article>
+<<<<<<< HEAD
                 <h4>Dale un vistazo a nuestros ultimos productos!</h4>
                 <a href="/detalledeproducto"><img id="imgShampoo" width="300" height="300" src="/img/shampoo-color-protect.jpg" alt="Foto shampoo"></a>
             </article>
+=======
+                <h4>Dale un vistazo a nuestros últimos productos</h4>
+                <% for(let i=0;i<products.length;i++) { %>
+                <a href="/detalledeproducto/<%=products[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=products[i].imagen%>" alt="Foto shampoo"></a>
+                <%}%>
+                </article>
+>>>>>>> 7a118ff5cbf20106f85d3592d95900ebb70af7e7
             <article>
                 <ul>
                     <h4>Promociones</h4>

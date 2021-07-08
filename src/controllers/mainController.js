@@ -1,6 +1,9 @@
+const productos=require("../database/products");
+
 module.exports={
     index: (req,res)=>{
-        res.render("index");
+        res.render("index", {products: productos});
+
     },
     register: (req,res)=>{
         res.render("./users/vistaderegistro");
