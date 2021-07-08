@@ -6,10 +6,10 @@ module.exports={
 
     },
     register: (req,res)=>{
-        res.render("./users/vistaderegistro");
+        
     },
     products:(req,res)=>{
-        res.render("./products/vistadedetalledeproducto");
+        res.render("./products/vistadedetalledeproducto", {products: productos});
     },
     login:(req,res)=>{
         res.render("./users/vistadelogin");
