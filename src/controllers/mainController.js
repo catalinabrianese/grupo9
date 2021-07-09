@@ -6,7 +6,7 @@ module.exports={
 
     },
     register: (req,res)=>{
-        
+        res.render('./users/vistaderegistro');
     },
     products:(req,res)=>{
         res.render("./products/vistadedetalledeproducto", {products: productos});
