@@ -13,47 +13,35 @@
   <%- include ("../partials/header") %>
   <form action="/user/create" method="POST" class="form-registro">
   
-    <h1>Editor de productos</h1>
+    <h1>Subir productos</h1>
     
     <fieldset>
 
-      <input placeholder="Nombre" type="text" id="Nombre" name="user_name">
+      <label><strong>Nombre del producto</strong></label>  
+      <input placeholder="Ej: Acondicionador Pantene" type="text" id="NombreProducto" name="product_name">
 
-      <input placeholder="Apellido" type="text" id="Apellido" name="user_surname">
+      <label><strong>Precio del producto</strong></label>  
+      <input placeholder="Ej: 250,21" type="text" id="PrecioProducto" name="product_price">
 
-      <label><strong>Genero</strong></label>
+      <label><strong>Descuento</strong></label>
+      <input placeholder="Ej: 20" type="text" id="DescuentoProducto" name="product_discount">
+
+      <label><strong>Categoria</strong></label>
+      <input placeholder="Ej: Masculino" type="text"  id="CategoriaProducto" name="product_category">
       
-      <input type="radio" id="masculino" value="masculino" name="user_gender"><label for="masculino" class="light">Masculino</label><br>
-      <input type="radio" id="femenino" value="femenino" name="user_gender"><label for="femenino" class="light">Femenino</label>
-      <br>
-      <br> 
-         
-      <input placeholder="E-mail" type="email" id="email" name="user_email" required>
+      <label><strong>Descripción</strong></label>
+      <input type="text"  id="DescripcionProducto name="product_price">
 
-      <br>
-      <input placeholder="Contraseña" type="password" name="pass">
-      <input placeholder="Confirmar contraseña" type="password" name="pass">
-      <br>
-      
-      <label for="fechnac"><strong>Fecha de nacimiento</strong></label>
-      <input type="date" id="fechanac" name="user_birth">
+      <label><strong>Imágen Producto</strong></label>
+      <input type="file"  id="ImagenProducto" name="product_image">
 
-      
-
-      <input placeholder="Domicilio" type="text" id="mail" name="user_address">
          
     </fieldset>
-       
-
-
-
-    <span>
-        <input type="checkbox" name="TyC"/> Acepto Terminos y Condiciones
-    </span>
+     
     <br>
     <br>
     <span>
-        <button class="button2" type="submit">Enviar</button>
+        <button type="submit">Guardar Producto</button>
     </span>
     
   </form>

@@ -24,6 +24,11 @@ module.exports={
         res.render("vistadecarrito");
     },
     editar: (req,res)=>{
+        res.render("./products/editarproducto");
+    },
+    crear: (req,res)=>{
         res.render("./products/crearproducto");
-    }
+    },
+
+
 }

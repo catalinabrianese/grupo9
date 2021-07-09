@@ -8,6 +8,9 @@ router.get("/", mainController.index);
 router.get("/detalledeproducto/:id", mainController.products);
 router.get("/login", mainController.login);
 router.get("/carrito", mainController.carrito);
-router.get("/editar", mainController.editar);
+
+router.get("/crear/", mainController.crear);
+router.get("/editar/:id?", mainController.editar);
+//router.put("/editar/:id", mainController.actualizar);
 
 module.exports=(router);
