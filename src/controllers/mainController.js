@@ -30,7 +30,14 @@ module.exports={
         res.render("./products/crearproducto");
     },
     guardar: (req,res)=>{
-        res.redirect("/");
-    },
+           // let nombreImagen=req.file.filename;
+            //let idNuevo = products[products.length-1].id + 1;
+            //let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
+            //products.push(nuevoObjeto);
+            // fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+            res.send(req.body);
+            //res.redirect('/');
+        },
+        
+    }
 
-}

@@ -12,7 +12,7 @@
 </head>
 <body>
   <%- include ("../partials/header") %>
-  <form action="/crear" method="POST">
+  <form action="/crear" method="POST" enctype="multipart/form-data" >
   
     <h1>Subir productos</h1>
     
@@ -27,9 +27,14 @@
       <label><strong>Descuento</strong></label>
       <input placeholder="Ej: 20" type="text" id="DescuentoProducto" name="product_discount">
 
-      <label><strong>Categoria</strong></label>
-      <input placeholder="Ej: Masculino" type="text"  id="CategoriaProducto" name="product_category">
-      
+
+      <label for="CategoriaProducto"><strong>Categoría</strong></label>
+      <select name="producto">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+        <option value="U">Unisex</option>
+      </select name="producto">
+          
       <label><strong>Descripción</strong></label>
       <input type="text"  id="DescripcionProducto name="product_price">
 
