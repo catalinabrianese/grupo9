@@ -23,6 +23,9 @@ module.exports={
     },
     login:(req,res)=>{
         
+    },
+    register:(req,res)=>{
+        res.render("./users/vistaderegistro");
     }
 
 }
