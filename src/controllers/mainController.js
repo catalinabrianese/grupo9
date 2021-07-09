@@ -22,5 +22,8 @@ module.exports={
     },
     carrito: (req,res)=>{
         res.render("vistadecarrito");
+    },
+    editar: (req,res)=>{
+        res.render("./products/crearproducto");
     }
 }

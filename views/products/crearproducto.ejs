@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="/css/estilo-registro.css">
+    <link rel="stylesheet" href="normalize.css" />
+    <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <%- include ("../partials/header") %>
+  <form action="/user/create" method="POST" class="form-registro">
+  
+    <h1>Editor de productos</h1>
+    
+    <fieldset>
+
+      <input placeholder="Nombre" type="text" id="Nombre" name="user_name">
+
+      <input placeholder="Apellido" type="text" id="Apellido" name="user_surname">
+
+      <label><strong>Genero</strong></label>
+      
+      <input type="radio" id="masculino" value="masculino" name="user_gender"><label for="masculino" class="light">Masculino</label><br>
+      <input type="radio" id="femenino" value="femenino" name="user_gender"><label for="femenino" class="light">Femenino</label>
+      <br>
+      <br> 
+         
+      <input placeholder="E-mail" type="email" id="email" name="user_email" required>
+
+      <br>
+      <input placeholder="Contraseña" type="password" name="pass">
+      <input placeholder="Confirmar contraseña" type="password" name="pass">
+      <br>
+      
+      <label for="fechnac"><strong>Fecha de nacimiento</strong></label>
+      <input type="date" id="fechanac" name="user_birth">
+
+      
+
+      <input placeholder="Domicilio" type="text" id="mail" name="user_address">
+         
+    </fieldset>
+       
+
+
+
+    <span>
+        <input type="checkbox" name="TyC"/> Acepto Terminos y Condiciones
+    </span>
+    <br>
+    <br>
+    <span>
+        <button class="button2" type="submit">Enviar</button>
+    </span>
+    
+  </form>
+  <%- include ("../partials/footer") %>
+</body>
+</html>
