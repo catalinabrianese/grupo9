@@ -29,6 +29,8 @@ module.exports={
     crear: (req,res)=>{
         res.render("./products/crearproducto");
     },
-
+    guardar: (req,res)=>{
+        res.redirect("/");
+    },
 
 }
