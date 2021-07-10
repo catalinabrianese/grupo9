@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de usuario</title>
-    <link rel="stylesheet" href="/css/estilo-registro.css">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registro de usuario</title>
+      <link rel="stylesheet" href="/css/estilo-registro.css">
 
-    <link rel="stylesheet" href="normalize.css" />
-    <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <%- include ("../partials/header") %>
-  <form action="/crear" method="POST" enctype="multipart/form-data" >
-  
-    <h1>Subir productos</h1>
+      <link rel="stylesheet" href="normalize.css" />
+      <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include ("../partials/header") %>
+    <form action="/crear" method="POST" enctype="multipart/form-data" >
     
-    <fieldset>
+      <h1>Subir productos</h1>
+      
+      <fieldset>
 
-      <label><strong>Nombre del producto</strong></label>  
-      <input placeholder="Ej: Acondicionador Pantene" type="text" id="NombreProducto" name="product_name">
+        <label><strong>Nombre del producto</strong></label>  
+        <input placeholder="Ej: Acondicionador Pantene" type="text" id="NombreProducto" name="product_name">
 
-      <label><strong>Precio del producto</strong></label>  
-      <input placeholder="Ej: 250,21" type="text" id="PrecioProducto" name="product_price">
+        <label><strong>Precio del producto</strong></label>  
+        <input placeholder="Ej: 250,21" type="text" id="PrecioProducto" name="product_price">
 
-      <label><strong>Descuento</strong></label>
-      <input placeholder="Ej: 20" type="text" id="DescuentoProducto" name="product_discount">
+        <label><strong>Descuento</strong></label>
+        <input placeholder="Ej: 20" type="text" id="DescuentoProducto" name="product_discount">
 
 
-      <label for="CategoriaProducto"><strong>Categoría</strong></label>
-      <select name="producto">
-        <option value="M">Masculino</option>
-        <option value="F">Femenino</option>
-        <option value="U">Unisex</option>
-      </select name="producto">
+        <label for="CategoriaProducto"><strong>Categoría</strong></label>
+        <select name="producto">
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+          <option value="U">Unisex</option>
+        </select name="producto">
+            
+        <label><strong>Descripción</strong></label>
+        <input type="text"  id="DescripcionProducto name="product_price">
+
+        <label><strong>Imágen Producto</strong></label>
+        <input type="file"  id="ImagenProducto" name="product_image">
+
           
-      <label><strong>Descripción</strong></label>
-      <input type="text"  id="DescripcionProducto name="product_price">
-
-      <label><strong>Imágen Producto</strong></label>
-      <input type="file"  id="ImagenProducto" name="product_image">
-
-         
-    </fieldset>
-     
-    <br>
-    <br>
-    <span>
-        <button type="submit">Guardar Producto</button>
-    </span>
-    
-  </form>
-  <%- include ("../partials/footer") %>
-</body>
+      </fieldset>
+      
+      <br>
+      <br>
+      <span>
+          <button type="submit">Guardar Producto</button>
+      </span>
+      
+    </form>
+    <%- include ("../partials/footer") %>
+  </body>
 </html>
