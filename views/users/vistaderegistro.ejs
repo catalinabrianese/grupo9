@@ -1,94 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de usuario</title>
-    <link rel="stylesheet" href="/css/estilo-registro.css">
-    <link rel="stylesheet" href="normalize.css" />
-    <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <%- include ("../partials/header") %>
-  <form action="/user/create" method="POST" class="form-registro">
-  
-    <h1>Registra tu usuario</h1>
-    
-    <fieldset>
-
-      <input placeholder="Nombre" type="text" id="Nombre" name="user_name">
-
-      <input placeholder="Apellido" type="text" id="Apellido" name="user_surname">
-
-      <label><strong>Genero</strong></label>
-      
-      <input type="radio" id="masculino" value="masculino" name="user_gender"><label for="masculino" class="light">Masculino</label><br>
-      <input type="radio" id="femenino" value="femenino" name="user_gender"><label for="femenino" class="light">Femenino</label>
-      <br>
-      <br> 
-         
-      <input placeholder="E-mail" type="email" id="email" name="user_email" required>
-
-      <br>
-      <input placeholder="Contraseña" type="password" name="pass">
-      <input placeholder="Confirmar contraseña" type="password" name="pass">
-      <br>
-      
-      <label for="fechnac"><strong>Fecha de nacimiento</strong></label>
-      <input type="date" id="fechanac" name="user_birth">
-
-      <label for="paisnac"><strong>País de residencia</strong></label>
-      <select name="pais">
-        <option value="AR">Argentina</option>
->       <option value="BR">Brasil</option>
-        <option value="CL">Chile</option>
-        <option value="CO">Colombia</option>
-        <option value="CR">Costa Rica</option>
-        <option value="CU">Cuba</option>
-        <option value="EC">Ecuador</option>
-        <option value="SV">El Salvador</option>  
-        <option value="GT">Guatemala</option>
-        <option value="GY">Guayana</option>    
-        <option value="HT">Haití</option>
-        <option value="HN">Honduras</option>
-        <option value="KY">Islas Caimán</option>
-        <option value="FK">Islas Malvinas</option>
-        <option value="TC">Islas Turks y Caicos</option>
-        <option value="JM">Jamaica</option>
-        <option value="MX">México</option>
-        <option value="NI">Nicaragua</option>
-        <option value="PA">Panamá</option>
-        <option value="PY">Paraguay</option>
-        <option value="PE">Perú</option>
-        <option value="PR">Puerto Rico</option>
-        <option value="QA">Qatar</option>
-        <option value="KN">Saint Kitts y Nevis</option>
-        <option value="VC">San Vicente y Granadinas</option>
-        <option value="LC">Santa Lucía</option>
-        <option value="ST">Santo Tomé y Príncipe</option>
-        <option value="TT">Trinidad y Tobago</option>
-        <option value="UY">Uruguay</option>
-        <option value="VE">Venezuela</option>
-        </select>
-
-      <input placeholder="Domicilio" type="text" id="mail" name="user_address">
-         
-    </fieldset>
-       
-
-
-
-    <span>
-        <input type="checkbox" name="TyC"/> Acepto Terminos y Condiciones
-    </span>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registro de usuario</title>
+      <link rel="stylesheet" href="/css/estilo-registro.css">
+      <link rel="stylesheet" href="normalize.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> 
+      <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="main-header-bar">
+        <a href="/login">Inicia sesión</a>
+        <a href="/user/perfil"><i class="fas fa-user"></i></a>
+        <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+    <h1 class="titulo-principal"><a href="/">Seda & Brillo</a></h1>
     <br>
     <br>
-    <span>
-        <button class="button2" type="submit">Enviar</button>
-    </span>
+    </header>
+    <form action="/user/create" method="POST" class="form-registro">
     
-  </form>
-  <%- include ("../partials/footer") %>
-</body>
+      <h1>Registra tu usuario</h1>
+      
+      <fieldset>
+
+        <input placeholder="Nombre" type="text" id="Nombre" name="user_name">
+
+        <input placeholder="Apellido" type="text" id="Apellido" name="user_surname">
+
+        <label><strong>Genero</strong></label>
+        
+        <input type="radio" id="masculino" value="masculino" name="user_gender"><label for="masculino" class="light">Masculino</label><br>
+        <input type="radio" id="femenino" value="femenino" name="user_gender"><label for="femenino" class="light">Femenino</label>
+        <br>
+        <br> 
+          
+        <input placeholder="E-mail" type="email" id="email" name="user_email" required>
+
+        <br>
+        <input placeholder="Contraseña" type="password" name="pass">
+        <input placeholder="Confirmar contraseña" type="password" name="pass">
+        <br>
+        
+        <label for="fechnac"><strong>Fecha de nacimiento</strong></label>
+        <input type="date" id="fechanac" name="user_birth">
+
+        <label for="paisnac"><strong>País de residencia</strong></label>
+        <select name="pais">
+          <option value="AR">Argentina</option>
+  >       <option value="BR">Brasil</option>
+          <option value="CL">Chile</option>
+          <option value="CO">Colombia</option>
+          <option value="CR">Costa Rica</option>
+          <option value="CU">Cuba</option>
+          <option value="EC">Ecuador</option>
+          <option value="SV">El Salvador</option>  
+          <option value="GT">Guatemala</option>
+          <option value="GY">Guayana</option>    
+          <option value="HT">Haití</option>
+          <option value="HN">Honduras</option>
+          <option value="KY">Islas Caimán</option>
+          <option value="FK">Islas Malvinas</option>
+          <option value="TC">Islas Turks y Caicos</option>
+          <option value="JM">Jamaica</option>
+          <option value="MX">México</option>
+          <option value="NI">Nicaragua</option>
+          <option value="PA">Panamá</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Perú</option>
+          <option value="PR">Puerto Rico</option>
+          <option value="QA">Qatar</option>
+          <option value="KN">Saint Kitts y Nevis</option>
+          <option value="VC">San Vicente y Granadinas</option>
+          <option value="LC">Santa Lucía</option>
+          <option value="ST">Santo Tomé y Príncipe</option>
+          <option value="TT">Trinidad y Tobago</option>
+          <option value="UY">Uruguay</option>
+          <option value="VE">Venezuela</option>
+          </select>
+
+        <input placeholder="Domicilio" type="text" id="mail" name="user_address">
+          
+      </fieldset>
+        
+      <span>
+          <input type="checkbox" name="TyC"/> Acepto Terminos y Condiciones
+      </span>
+      <br>
+      <br>
+      <span>
+          <button class="button2" type="submit">Enviar</button>
+      </span>
+      
+    </form>
+    <footer class="footer-dark">
+      <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+      <p class="copyright">Seda & Brillo © 2022</p>
+    </footer>
+  </body>
 </html>

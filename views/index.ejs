@@ -14,16 +14,26 @@
     <body>
         <%- include ("./partials/header") %>
         <section class="centroDeLaPag">
-            <article>
-                <h4>Dale un vistazo a nuestros últimos productos</h4>
-                <% for(let i=0;i<6;i++) { %>
-                <a href="/detalledeproducto/<%=products[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=products[i].imagen%>" alt="Foto shampoo"></a>
-                <%}%>
-            </article>
-            <article id="a3">
-                <h4>Chequea nuestros productos en oferta!</h4>
-                <a href=""><img width="300" height="300" src="/img/shampoosEnPromo.jpg" alt="Promociones"></a>
-            </article>    
+            <div class="container">
+                <article>
+                    <h4>Dale un vistazo a nuestros últimos productos</h4>
+                    <br>
+                    <% for(let i=0;i<9;i++) { %>
+                    <a href="/detalledeproducto/<%=products[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=products[i].imagen%>" alt="Foto shampoo"></a>
+                    <%}%>
+                </article>
+            </div>
+            <div class="container">
+                <article>
+                    <h4>Líneas de Hairlogic:</h4>
+                    <br>
+                    <ul>
+                        <li><a href=""><img width="700" height="350" src="/img/repair-force-home.jpg" alt="Repair-force"></a></li>
+                        <li><a href=""><img width="700" height="350" src="/img/nutri-advance-home.jpg" alt="Nutri-advance"></a></li>
+                        <li><a href=""><img width="700" height="350" src="/img/color-protect-home.jpg" alt="Color-protect"></a></li>
+                    </ul>
+                </article>    
+            </div>
         </section>
        
         </div>  

@@ -50,12 +50,16 @@ h1 a{
     justify-content: space-around;
     padding: 10px;
     font-size:23px;
+    color:inherit;
 }
 
 .nav-bar{
     list-style-type: none;
 }
-
+li{
+  list-style-type: none;
+  justify-content: right;
+}
 .enlace{
     text-decoration: none;
     color: black;
@@ -115,7 +119,7 @@ h{
     text-align: center;
 }
 
-
+/**SUPONGO QUE ACÁ EMPIEZA EL CSS PARA EL FOOTER? **/
 .footer-dark {
     padding:50px 0;
     color:#f0f9ff;

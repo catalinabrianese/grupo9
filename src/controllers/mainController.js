@@ -8,7 +8,7 @@ module.exports={
     register: (req,res)=>{
         res.render('./users/vistaderegistro');
     },
-    products:(req,res)=>{
+    detailproducts:(req,res)=>{
         let producto = null;
         for (let i=0; i<productos.length; i++) {
             if (productos[i].id == req.params.id){
@@ -38,6 +38,12 @@ module.exports={
             res.send(req.body);
             //res.redirect('/');
         },
-        
+    products: (req,res)=>{
+        res.render("./products/listadodeproductos", {productos:productos})
+    },
+    eliminar: (req,res)=>{
+        //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
+        res.send(req.body);
     }
+}
 

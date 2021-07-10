@@ -1,0 +1,114 @@
+[
+    {
+        "id":1,
+        "imagen":"shampoo-color-protect.jpg",
+        "nombre": "SHAMPOO COLOR PROTECT",
+        "descripcion":"SHAMPOO PARA CABELLOS CON COLORACIÓN. El Shampoo Color Protect lava suavemente los cabellos, normaliza el Ph de la fibra capilar y mantiene la vitalidad e intensidad del color de los cabellos.",
+        "precio": 1600,
+        "tamaño": 350
+    },
+    {
+        "id":2,
+        "imagen":"acondicionador-color-protect-.jpg",
+        "nombre": "ACONDICIONADOR COLOR PROTECT",
+        "descripcion":"ACONDICIONADOR PARA CABELLOS CON COLORACIÓN. Garantiza la duración e intensidad del color por más tiempo. Otorga brillo y suavidad. Alto poder desenredante.precio: 1600",
+        "precio": 1360,
+        "tamaño": 225
+    },
+    {
+        "id":3,
+        "imagen":"bifase-color-protect.jpg",
+        "nombre": "ACONDICIONADOR BIFÁSICO COLOR PROTECT",
+        "descripcion":"SPRAY ACONDICIONADOR PARA CABELLOS CON COLORACIÓN SIN ENJUAGUE. Está formulado en dos fases diferenciadas. Una fase con Aminoácidos de Seda que crea una capa protectora que otorga brillo, mientras que su acción hidratante desenreda los cabellos, los deja suaves y sedosos al tacto. La fase con Vitamina E (antioxidante) protege los cabellos de los rayos del sol y prolonga la duración del color.",
+        "precio": 1450,
+        "tamaño": 240
+    },
+    {
+        "id":4,
+        "imagen":"mascara-color-protect-300.jpg",
+        "nombre": "MÁSCARA COLOR PROTECT",
+        "descripcion":"SPRAY ACONDICIONADOR PARA CABELLOS CON COLORACIÓN SIN ENJUAGUE. Está formulado en dos fases diferenciadas. Una fase con Aminoácidos de Seda que crea una capa protectora que otorga brillo, mientras que su acción hidratante desenreda los cabellos, los deja suaves y sedosos al tacto. La fase con Vitamina E (antioxidante) protege los cabellos de los rayos del sol y prolonga la duración del color.",
+        "precio": 1662,
+        "tamaño": 300
+    },
+    {
+        "id":5,
+        "imagen":"shampoo-nutri-advance.jpg",
+        "nombre": "SHAMPOO NUTRI ADVANCE",
+        "descripcion":"SHAMPOO PARA CABELLOS SECOS. Lava en profundidad los cabellos secos. Sus ingredientes activos aportan nutrición e hidratación desde la raíz a las puntas y preparan la fibra capilar para el tratamiento.",
+        "precio": 1600,
+        "tamaño": 350
+    },
+    {
+        "id":6,
+        "imagen":"acondicionador-nutri-advance.jpg",
+        "nombre": "ACONDICIONADOR NUTRI ADVANCE",
+        "descripcion":"ACONDICIONADOR PARA CABELLOS SECOS. Trata los cabellos, tiene poder desenredante, aporta disciplina, nutrición y brillo.",
+        "precio": 1360,
+        "tamaño": 225
+    },
+    {
+        "id":7,
+        "imagen":"mascara-nutri-advance-300.jpg",
+        "nombre": "MÁSCARA NUTRI ADVANCE",
+        "descripcion":"MÁSCARA PARA CABELLOS SECOS. Es un tratamiento intensivo para cabellos que permite nutrir en profundidad la fibra capilar. Aporta suavidad, brillo y reduce el frizz.",
+        "precio": 1662,
+        "tamaño": 300
+    },
+    {
+        "id":8,
+        "imagen":"serum-nutri-advance-63.jpg",
+        "nombre": "SERUM NUTRI ADVANCE",
+        "descripcion":"TRATAMIENTO INSTANTÁNEO PARA CABELLOS SECOS. Su textura suave y ligera permite recuperar la tasa lipídica del cabello y reducir el frizz.",
+        "precio": 1450,
+        "tamaño": 63
+    },
+    {
+        "id":9,
+        "imagen":"shampoo-repair-force.jpg",
+        "nombre": "SHAMPOO REPAIR FORCE",
+        "descripcion":"SHAMPOO PARA CABELLOS DAÑADOS Y FRÁGILES. Lava los cabellos y prepara la fibra capilar para recibir el tratamiento reparador y fortalecedor Repair Force.",
+        "precio": 1600,
+        "tamaño": 350
+    },
+    {
+        "id":10,
+        "imagen":"acondicionador-repair-force.jpg",
+        "nombre": "ACONDICIONADOR REPAIR FORCE",
+        "descripcion":"ACONDICIONADOR PARA CABELLOS DAÑADOS Y FRÁGILES. Repara los cabellos y fortalece desde la raíz a las puntas. Alto poder desenredante.",
+        "precio": 1360,
+        "tamaño": 225
+    },
+    {
+        "id":11,
+        "imagen":"mascara-repair-force.jpg",
+        "nombre": "MÁSCARA REPAIR FORCE",
+        "descripcion":"TRATAMIENTO INTENSIVO PARA CABELLOS DÉBILES, QUEBRADIZOS Y MUY DAÑADOS. Repara y regenera la fibra capilar en profundidad, desde la raíz a las puntas y devuelve la fortaleza perdida.",
+        "precio": 1662,
+        "tamaño": 300
+    },
+    {
+        "id":12,
+        "imagen":"nutrikeratina-repair-force-120.jpg",
+        "nombre": "NUTRIKERATINA REPAIR FORCE",
+        "descripcion":"TRATAMIENTO INSTANTÁNEO PARA CABELLOS DÉBILES, QUEBRADIZOS Y DAÑADOS SIN ENJUAGUE. Su fórmula enriquecida con keratina permite reparar y regenerar la fibra capilar, recupera la flexibilidad y fortaleza de manera sorprendente en un solo gesto de aplicación.",
+        "precio": 1200,
+        "tamaño": 120
+    },
+    {
+        "id":13,
+        "imagen":"shampoo-shade-correct.jpg",
+        "nombre": "SHAMPOO SILVER SHADE CORRECT",
+        "descripcion":"NEUTRALIZA PAULATINAMENTE LOS TONOS AMARILLENTOS DE LA FIBRA CAPILAR. Lava suavemente los cabellos. Transforma el color de los cabellos blancos y grises lavado tras lavado. Aporta pureza e intensidad al reflejo natural.",
+        "precio": 1600,
+        "tamaño": 350
+    },
+    {
+        "id":14,
+        "imagen":"shampoo-equalizer.jpg",
+        "nombre": "SHAMPOO EQUALIZER",
+        "descripcion":"SHAMPOO NEUTRO PARA TODO TIPO DE CABELLOS. Lava los cabellos, elimina todo tipo de impurezas y regulariza el PH del cuero cabelludo. Su fórmula, que combina Ácido Cítrico y Pantenol, aporta brillo.",
+        "precio": 1600,
+        "tamaño": 350
+    }
+]

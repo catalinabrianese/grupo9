@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/css/styles.css"></link>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Carrito</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/styles.css" rel="stylesheet">
         <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">    
         <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
     </head>
+
     <body>
         <%- include ("./partials/header") %>
-
-        <fieldset>
-            <section>
-                <h1>Carrito</h1>
-                <br>
-                <article class="centroDeLaPag">
-                    <img src="/img/shampoo-color-protect.jpg" alt="Titulo del producto">
-                    <div>
-                        <h3>SHAMPOO COLOR PROTECT</h3>
-                        <p>Bajada del producto</p>
+        <section class="centroDeLaPag">
+            <fieldset>
+                    <h1>Carrito</h1>
+                    <br>
+                    <div class="container">
+                        <article>
+                            <img src="/img/shampoo-color-protect.jpg" alt="Titulo del producto">
+                            <div>
+                                <h3>SHAMPOO COLOR PROTECT</h3>
+                                <input placeholder="Cantidad"></input>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="/img/acondicionador-color-protect-.jpg" alt="Titulo del producto">
+                            <div>
+                                <h3>ACONDICIONADOR COLOR PROTECT</h3>
+                                <input placeholder="Cantidad"></input>
+                            </div>
+                        </article>
                     </div>
-                </article>
-                <article class="centroDeLaPag">
-                    <img src="/img/acondicionador-color-protect-.jpg" alt="Titulo del producto">
-                    <div>
-                        <h3>ACONDICIONADOR COLOR PROTECT</h3>
-                        <p>Bajada del producto</p>
-                    </div>
-                </article>
-            </section>
-        </fieldset>
+            </fieldset>
+        </section>
         <%- include ("./partials/footer") %> 
     </body>
 </html>
