@@ -19,8 +19,8 @@ app.use((req,res,next)=>{
     res.status(404).render("not-found");
 });
 
-app.listen(3000, () => {
-    console.log("server corriendo");
+app.listen(process.env.PORT || 3001, () => {
+    console.log("Servidor corriendo en el puerto 3001")
 });
 
 
