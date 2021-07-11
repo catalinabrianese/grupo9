@@ -22,7 +22,7 @@ module.exports={
         
     },
     login:(req,res)=>{
-        
+        res.render("./users/vistadelogin");
     },
     register:(req,res)=>{
         res.render("./users/vistaderegistro");

@@ -3,12 +3,14 @@
 
     <head>
         <meta charset="utf-8">
+        <title><%=producto.nombre%></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">    
         <script src="https://kit.fontawesome.com/5f26f367ee.js" crossorigin="anonymous"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="/css/styles.css"></link>
-        <link rel="stylesheet" href="/css/normalize.css"></link>
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
-        <title>Seda y brillo</title>
     </head>
     <body>
         <%- include ("../partials/header") %>
@@ -20,7 +22,6 @@
                 <h5><a href="#">Modo de uso del producto</a></h5>
                 <p>
                 <h3><%=producto.descripcion%></h3>
-                
                 </p>
             </div>
             <div class="añadir al carrito">
@@ -33,28 +34,7 @@
             </div>
         </main>
         <br>
-
-        <footer>
-            <section id="contacto">
-                <ul>
-                    <ul>
-                        <h4>Redes sociales</h4>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Teléfono</a></li>
-                    </ul>
-                    <ul>
-                        <h4>Atención al cliente</h4>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">E-mail</a></li>
-                    </ul>
-                </ul>
-            </section>
-            <ul>
-                    <li><a href="#"><h6>Política de privacidad</h6></a></li>
-                    <li><a href="#"><h6>Términos y condiciones</h6></a></li>
-            </ul>
-        </footer>
-        
+        <%- include ("../partials/footer") %>
     </body>
 
 </html>
