@@ -34,20 +34,15 @@ module.exports={
         res.render("./products/crearproducto");
     },
     guardar: (req,res)=>{
-            let nuevoId=productos[productos.length-1].id +1;
-            let nuevoProducto= Object.assign({id: nuevoId},req.body);
-            productos.push(nuevoProducto);
+            let nombreImagen=req.file.filename;
+            let idNuevo = productos[productos.length-1].id + 1;
+            let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{imagen:nombreImagen});
+            productos.push(nuevoObjeto);
             fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
-            //res.redirect("/productos");
-           // let nombreImagen=req.file.filename;
-            //let idNuevo = products[products.length-1].id + 1;
-            //let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
-            //products.push(nuevoObjeto);
-            // fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
             res.redirect('/productos');
         },
     products: (req,res)=>{
-        res.render("./products/listadodeproductos", {productos:productos})
+        res.render("./products/listadodeproductos", {producto:productos})
     },
     eliminar: (req,res)=>{
         //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
