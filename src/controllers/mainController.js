@@ -28,7 +28,15 @@ module.exports={
         res.render("vistadecarrito");
     },
     editar: (req,res)=>{
-        res.render("./products/editarproducto");
+        let producto = null;
+        for (let i=0; i<productos.length; i++) {
+            if (productos[i].id == req.params.id){
+                producto = productos[i]
+            } 
+        }
+        
+        res.render("./products/editarproducto", {producto: producto});
+
     },
     crear: (req,res)=>{
         res.render("./products/crearproducto");
@@ -46,6 +54,11 @@ module.exports={
     },
     eliminar: (req,res)=>{
         //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
+        res.send(req.body);
+    },
+    actualizar: (req,res)=>{
+
+        
         res.send(req.body);
     }
 }
