@@ -42,7 +42,7 @@ module.exports={
             res.redirect('/productos');
         },
     products: (req,res)=>{
-        res.render("./products/listadodeproductos", {producto:productos})
+        res.render("./products/listadodeproductos", {productos:productos})
     },
     eliminar: (req,res)=>{
         //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
