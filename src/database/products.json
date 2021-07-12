@@ -110,13 +110,6 @@
   "descripcion": "SHAMPOO NEUTRO PARA TODO TIPO DE CABELLOS. Lava los cabellos, elimina todo tipo de impurezas y regulariza el PH del cuero cabelludo. Su fórmula, que combina Ácido Cítrico y Pantenol, aporta brillo.",
   "precio": 1600,
   "tamaño": 350
- },
- {
-  "id": 15,
-  "product_name": "TRATAMIENTO ULTRALIV",
-  "product_price": "1200",
-  "product_discount": "0",
-  "producto": "F",
-  "product_image": "ultraliv.jpg"
  }
+ 
 ]

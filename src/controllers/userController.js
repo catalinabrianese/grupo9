@@ -3,23 +3,11 @@ const fs = require("fs");
 const path = require("path");
 const usuarioFilePath=path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../database/users.json")
+const usuarios=require("../database/users.json");
 
 
 module.exports={
     guardarUsuario: (req,res)=>{
-        /* let usuario={
-            nombre: req.body.Nombre,
-            apellido: req.body.Apellido,
-            masculino: req.body.masculino,
-            femenino: req.body.femenino,
-            SE PODRÁ GUARDAR SÓLO LA OPCIÓN SELECCIONADA? MASCULINO O FEMENINO
-            //email: req.body.Email,
-            //contraseña: req.body.Contraseña,
-            //NO SE COMO GUARDAR FECHA DE NACIMIENTO Y PAIS DE NACIMIENTO
-            //domicilio: req.body.Domicilio,
-        //} */
-        //GUARDAR USUARIO
         let nuevoId=usuarios[usuarios.length-1].id +1;
         let nuevoUsuario= Object.assign({id: nuevoId},req.body);
         usuarios.push(nuevoUsuario);
@@ -27,7 +15,13 @@ module.exports={
         res.redirect("/login");
     },
     perfilUsuario: (req,res)=>{
-        res.render("./users/perfil");
+        let usuario = null;
+        for (let i=0; i<usuarios.length; i++) {
+            if (usuarios[i].id == req.params.id){
+                usuario = usuarios[i]
+            } 
+        }
+        res.render("./users/perfil",{usuario: usuario});
         
     },
     login:(req,res)=>{
