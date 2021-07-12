@@ -1,16 +1,8 @@
 const productos=require("../database/products");
 const fs = require("fs");
 const path = require("path");
-const multer=require("multer");
 const productoFilePath=path.join(__dirname, '../database/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
-const storage = multer.diskStorage({ 
-    destination: function (req, file, cb) { 
-       cb(null, './public/images/avatars'); 
-    }, 
-    filename: function (req, file, cb) { 
-       cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");  } 
-  })
 
 module.exports={
     index: (req,res)=>{
