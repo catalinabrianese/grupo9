@@ -29,6 +29,9 @@ module.exports={
     },
     register:(req,res)=>{
         res.render("./users/vistaderegistro");
+    },
+    editarperfil:(req,res)=>{
+        res.render("./users/userEdit");
     }
 
 }

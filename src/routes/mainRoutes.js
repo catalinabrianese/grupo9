@@ -26,6 +26,6 @@ router.post("/crear",uploadFile.single('imagen'), mainController.guardar);
 router.get("/editar/:id", mainController.editar);
 //router.put("/editar/:id", mainController.actualizar);
 
-router.post("/eliminar/:id", mainController.eliminar);
+router.delete("/eliminar/:id", mainController.eliminar);
 
 module.exports=(router);

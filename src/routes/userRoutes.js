@@ -14,6 +14,9 @@ const validateCreateForm =[
 
 router.post("/create", userController.guardarUsuario);
 router.get("/perfil", userController.perfilUsuario);
+router.get("/editarperfil", userController.editarperfil);
+router.post("/editarperfil/:idUsuario", userController.editarperfil);
+
 router.post("/login", userController.login);
 router.get("/register", validateCreateForm, userController.register);
 
