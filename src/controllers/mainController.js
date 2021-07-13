@@ -57,9 +57,24 @@ module.exports={
         res.send(req.body);
     },
     actualizar: (req,res)=>{
-
-        
-        res.send(req.body);
+        /*let valoresNuevos=req.body;
+        let idProducto= req.params.id;
+        let productoEncontrado=null;
+        for (let i=0;i<productos.length;i++){
+            if(productos[i].id == idProducto){
+                productos[i].nombre=valoresNuevos.nombre;
+                productos[i].precio=valoresNuevos.precio;
+                productos[i].descuento=valoresNuevos.descuento;
+                productos[i].categoria=valoresNuevos.categoria;
+                productos[i].descripcion=valoresNuevos.descripcion;
+                
+                productoEncontrado= productos[i];
+                break;
+            }
+        }*/
+        res.send("hola");
+        //fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
+        //res.render("vistadedetalledeproducto",{producto : productoEncontrado});
     }
 }
 

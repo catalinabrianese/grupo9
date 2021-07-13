@@ -18,23 +18,23 @@
       <br>
       <br>
     </header>
-    <form action="/editar/:id?_method=PUT" method="POST">
+    <form action="/editar/<%=producto.id%>?method_PUT" method="POST">
     
-      <h1>Editar producto <%= producto.nombre %> </h1>
+      <h1>Estás editando: <%= producto.nombre %> </h1>
       
       <fieldset>
 
-        <label><strong>Nombre del producto</strong></label>  
-        <input placeholder="Ej: Acondicionador Pantene" type="text" id="NombreProducto" name="nombre">
+        <label><strong>Nombre del producto: </strong></label>  
+        <input placeholder="<%= producto.nombre %>" type="text" id="NombreProducto" name="nombre">
 
-        <label><strong>Nuevo Precio</strong></label>  
-        <input placeholder="Ej: 250,21" type="text" id="PrecioProducto" name="precio">
+        <label><strong>Precio</strong></label>  
+        <input placeholder="<%= producto.precio %>" type="text" id="PrecioProducto" name="precio">
 
-        <label><strong>Nuevo Descuento</strong></label>
-        <input placeholder="Ej: 20" type="text" id="DescuentoProducto" name="descuento">
+        <label><strong>Descuento</strong></label>
+        <input placeholder="<%= producto.descuento %>" type="text" id="DescuentoProducto" name="descuento">
 
 
-        <label for="CategoriaProducto"><strong>Categoría</strong></label>
+        <label for="CategoriaProducto"><strong>Categoría: <%= producto.categoria %></strong></label>
         <select name="categoria">
           <option value="M">Masculino</option>
           <option value="F">Femenino</option>
@@ -42,7 +42,7 @@
         </select>
             
         <label><strong>Descripción</strong></label>
-        <textarea  id="DescripcionProducto" name="descripcion"></textarea>
+        <textarea placeholder="<%= producto.descripcion %>" id="DescripcionProducto" name="descripcion"></textarea>
 
         <label><strong>Imagen Producto</strong></label>
         <input type="file"  id="ImagenProducto" name="imagen"></input>
