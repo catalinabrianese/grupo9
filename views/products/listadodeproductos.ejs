@@ -19,8 +19,13 @@
         <section class="centroDeLaPag">
             <article>
                 <% for(let i=0;i<productos.length;i++) { %>
-                <a href="/detalledeproducto/<%=productos[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=productos[i].imagen%>" alt="Imagen"></a>
-                <a href="/eliminar/<%=productos[i].id%>"><button class="button" type="submit">Eliminar</button></a>
+                    <div class="container">
+                        <a href="/detalledeproducto/<%=productos[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=productos[i].imagen%>" alt="Imagen"></a>
+                            <a href="/eliminar/<%=productos[i].id%>"></a>
+                            <form method="POST" action="/eliminar/<%=productos[i].id%>?_method=DELETE">
+                            <button class="button" type="submit">Eliminar</button>
+                            </form>
+                    </div>
                 <a href="/editar/<%=productos[i].id%>"><button class="button" type="submit">Editar</button></a>
                  <%}%>
             </article>

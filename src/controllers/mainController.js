@@ -54,12 +54,21 @@ module.exports={
     },
     eliminar: (req,res)=>{
         //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
-        res.send(req.body);
+        let idProducto=req.params.id;
+        for(let i=0;i<productos.length; i++){
+            if (productos[i].id == idProducto){
+                productos.splice(i,1);
+                break;
+            }
+        }
+        fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
+        res.render("../views/products/listadodeproductos", {productos:productos});
+        
     },
     actualizar: (req,res)=>{
-        /*let valoresNuevos=req.body;
+        let valoresNuevos=req.body;
         let idProducto= req.params.id;
-        let productoEncontrado=null;
+        let productoEditado=null;
         for (let i=0;i<productos.length;i++){
             if(productos[i].id == idProducto){
                 productos[i].nombre=valoresNuevos.nombre;
@@ -68,13 +77,12 @@ module.exports={
                 productos[i].categoria=valoresNuevos.categoria;
                 productos[i].descripcion=valoresNuevos.descripcion;
                 
-                productoEncontrado= productos[i];
+                productoEditado= productos[i];
                 break;
             }
-        }*/
-        res.send("hola");
-        //fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
-        //res.render("vistadedetalledeproducto",{producto : productoEncontrado});
+        }
+        fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
+        res.render("./products/vistadedetalledeproducto",{producto: productoEditado});
     }
 }
 
