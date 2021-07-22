@@ -22,7 +22,14 @@
     <br>
     <br>
     </header>
-    <form action="/user/create" method="POST" class="form-registro">
+   
+    <% if (locals.errors) {
+       errors.forEach(error => { %>
+       <p class="feedback"><%= error.msg %></p>
+       <%  })
+           }
+        %>
+       <form action="/user/create" method="POST" class="form-registro">
     
       <h1>Registra tu usuario</h1>
       
