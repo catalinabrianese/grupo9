@@ -4,15 +4,23 @@ const path = require("path");
 const usuarioFilePath=path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
 const usuarios=require("../database/users.json");
+const {validationResult} = require('express-validator');
 
 
 module.exports={
     guardarUsuario: (req,res)=>{
-        let nuevoId=usuarios[usuarios.length-1].id +1;
-        let nuevoUsuario= Object.assign({id: nuevoId},req.body);
-        usuarios.push(nuevoUsuario);
-        fs.writeFileSync(usuarioFilePath, JSON.stringify(usuarios,null, ' '));
-        res.redirect("/login");
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+         let nuevoId=usuarios[usuarios.length-1].id +1;
+         let nuevoUsuario= Object.assign({id: nuevoId},req.body);
+         usuarios.push(nuevoUsuario);
+         fs.writeFileSync(usuarioFilePath, JSON.stringify(usuarios,null, ' '));
+         res.redirect("/login");
+       
+        } else {
+            res.render("./users/vistaderegistro");
+        }
+       
     },
     perfilUsuario: (req,res)=>{
         let usuario = null;

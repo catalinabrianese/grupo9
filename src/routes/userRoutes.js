@@ -3,16 +3,18 @@ const router = express.Router();
 
 const {body} = require("express-validator");
 const userController = require("../controllers/userController");
+const logDBMiddleware = require("../middlewares/logDBMiddleware");
 
 
 //validaciones
 const validateCreateForm =[
     body("user_name").notEmpty().withMessage("Debes completar el campo Nombre"),
     body("user_surname").notEmpty().withMessage("Debes completar el campo Apellido"),
-    body("user_email").notEmpty().withMessage("Debes completar el campo E-mail"),
+    body("user_email").isEmail().withMessage("Debes completar el campo E-mail"),
+    body("pass").notEmpty().withMessage("Debes completar el campo password"),
 ];
 
-router.post("/create", userController.guardarUsuario);
+router.post("/create", logDBMiddleware, validateCreateForm, userController.guardarUsuario);
 router.get("/perfil", userController.perfilUsuario);
 router.get("/editarperfil", userController.editarperfil);
 router.post("/editarperfil/:idUsuario", userController.editarperfil);
