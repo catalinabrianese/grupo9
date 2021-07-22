@@ -18,7 +18,11 @@ module.exports={
          res.redirect("/login");
        
         } else {
-            res.render("./users/vistaderegistro", { errors: errors.array() });
+            res.render("./users/vistaderegistro",{ 
+                errors: errors.array(),
+                old: req.body 
+            
+            });
         }
        
     },

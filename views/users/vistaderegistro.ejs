@@ -35,9 +35,9 @@
       
       <fieldset>
 
-        <input placeholder="Nombre" type="text" id="Nombre" name="user_name">
+        <input placeholder="Nombre" type="text" id="Nombre" name="user_name" value="<%= locals.old && old.user_name ? old.user_name : ''%>">
 
-        <input placeholder="Apellido" type="text" id="Apellido" name="user_surname">
+        <input placeholder="Apellido" type="text" id="Apellido" name="user_surname" value="<%= locals.old && old.user_surname ? old.user_surname : ''%>">
 
         <label><strong>Genero</strong></label>
         
@@ -46,7 +46,7 @@
         <br>
         <br> 
           
-        <input placeholder="E-mail" type="email" id="email" name="user_email" required>
+        <input placeholder="E-mail" type="email" id="email" name="user_email" required value="<%= locals.old && old.user_email ? old.user_email : ''%>">
 
         <br>
         <input placeholder="Contraseña" type="password" name="pass">
@@ -54,7 +54,7 @@
         <br>
         
         <label for="fechnac"><strong>Fecha de nacimiento</strong></label>
-        <input type="date" id="fechanac" name="user_birth">
+        <input type="date" id="fechanac" name="user_birth" value="<%= locals.old && old.user_birth ? old.user_birth : ''%>">
         <br>
         <label for="paisnac"><strong>País de residencia</strong></label>
         <select name="pais">
@@ -92,7 +92,7 @@
           </select>
         <br>
         <br>
-        <input placeholder="Domicilio" type="text" id="mail" name="user_address">
+        <input placeholder="Domicilio" type="text" id="mail" name="user_address" value="<%= locals.old && old.user_address ? old.user_address : ''%>">
           
       </fieldset>
         
