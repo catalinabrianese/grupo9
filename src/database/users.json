@@ -930,5 +930,53 @@
   "pais": "TC",
   "user_address": "Bombonera",
   "TyC": "on"
+ },
+ {
+  "id": 110,
+  "user_name": "mateo",
+  "user_surname": "pereyra",
+  "user_email": "mpiraola@gmail.com",
+  "pass": "1234",
+  "pass-confirmation": "1234",
+  "user_birth": "2021-07-28",
+  "pais": "SP",
+  "user_address": "qweqweqwe"
+ },
+ {
+  "id": 111,
+  "user_name": "mateo",
+  "user_surname": "pereyra",
+  "user_email": "mpiraola@gmail.com",
+  "pass": "1234",
+  "pass-confirmation": "1234",
+  "user_birth": "2021-07-28",
+  "pais": "SP",
+  "user_address": "qweqweqwe"
+ },
+ {
+  "id": 112,
+  "user_name": "Francisco ",
+  "user_surname": "Carmona",
+  "user_gender": "masculino",
+  "user_email": "fran@arrr.com",
+  "pass": "pelado",
+  "pass-confirmation": "pelado",
+  "user_birth": "2021-07-05",
+  "pais": "MX",
+  "user_address": "asdasd",
+  "TyC": "on"
+ },
+ {
+  "id": 113,
+  "user_name": "Juan",
+  "user_surname": "Carmona",
+  "user_gender": "masculino",
+  "user_email": "juan@carmona.com",
+  "pass": "$2a$10$bUNv8n3b.3gy3vYifgtOjOJM.YVZUftf5OClA/QAQUf/E6H0hjONm",
+  "pass-confirmation": "Alamo",
+  "user_birth": "9293-02-22",
+  "pais": "JM",
+  "user_address": "La puntilla",
+  "TyC": "on"
  }
 ]
