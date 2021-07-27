@@ -5,6 +5,8 @@ const usuarioFilePath=path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
 const usuarios=require("../database/users.json");
 const {validationResult} = require('express-validator');
+const bcrypt = require('bcryptjs');
+
 
 
 module.exports={
@@ -12,7 +14,9 @@ module.exports={
         let errors = validationResult(req);
         if (errors.isEmpty()) {
          let nuevoId=usuarios[usuarios.length-1].id +1;
+         let passEncriptada = bcrypt.hashSync(req.body.pass, 10);
          let nuevoUsuario= Object.assign({id: nuevoId},req.body);
+         nuevoUsuario.pass = passEncriptada;
          usuarios.push(nuevoUsuario);
          fs.writeFileSync(usuarioFilePath, JSON.stringify(usuarios,null, ' '));
          res.redirect("/login");

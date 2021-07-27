@@ -12,6 +12,12 @@ const validateCreateForm =[
     body("user_surname").notEmpty().withMessage("Debes completar el campo Apellido"),
     body("user_email").isEmail().withMessage("Debes completar el campo E-mail"),
     body("pass").notEmpty().withMessage("Debes completar el campo password"),
+    body("pass").custom((value, {req}) => {
+      if (value !== req.body["pass-confirmation"]) {
+          throw new Error("no coinciden las claves")
+      }
+      return true
+    }),
 ];
 
 router.post("/create", logDBMiddleware, validateCreateForm, userController.guardarUsuario);
