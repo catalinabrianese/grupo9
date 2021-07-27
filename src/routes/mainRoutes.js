@@ -19,6 +19,10 @@ router.get("/", mainController.index);
 router.get("/productos", mainController.products);
 router.get("/detalledeproducto/:id", mainController.detailproducts);
 router.get("/login", mainController.login);
+router.post("/login", [
+    check("email").isEmail().withMessage("Email inválido"),
+    check("password").isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+], mainController.processLogin);
 router.get("/carrito", mainController.carrito);
 
 router.get("/crear", mainController.crear);

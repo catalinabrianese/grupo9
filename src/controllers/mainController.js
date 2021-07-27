@@ -1,6 +1,7 @@
 const productos=require("../database/products");
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 const productoFilePath=path.join(__dirname, '../database/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
 
@@ -23,6 +24,36 @@ module.exports={
     },
     login:(req,res)=>{
         res.render("./users/vistadelogin");
+    },
+    processLogin: function(req,res){
+        let errors=validationResult(req);
+        if(errors.isEmpty()){
+            let userJSON= fs.readFileSync("users.json",{errors: errors.errors});
+            let users;
+            if(usersJSON=""){
+                users=[];
+            }else{
+                users=JSON.parse(usersJSON);
+            }
+            for(let i=0; i <users.length;i++){
+                if(users[i].user_email == req.body.user_email){
+                    if(bcrypt.compareSync(req.body.pass, users[i].pass)){
+                        let usuarioALoguearse=users[i];
+                        break;
+                    }
+                }
+            }
+            if(usuarioALoguearse == undefined){
+                return res.render("login",{errors:[
+                    {msg: "Credenciales inválidas"}
+                ]});
+            }
+
+            req.session.usuarioLogueado=usuarioALoguearse;
+        }else{
+            return res.render("login", {errors: errors.errors})
+        }
+        
     },
     carrito: (req,res)=>{
         res.render("vistadecarrito");
@@ -53,7 +84,7 @@ module.exports={
         res.render("./products/listadodeproductos", {productos:productos})
     },
     eliminar: (req,res)=>{
-        //HAY QUE ELIMINAR EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
+        //ELIMINA EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
         let idProducto=req.params.id;
         for(let i=0;i<productos.length; i++){
             if (productos[i].id == idProducto){
@@ -66,9 +97,9 @@ module.exports={
         
     },
     actualizar: (req,res)=>{
-        let valoresNuevos=req.body;
+        let valoresNuevos= req.body;
         let idProducto= req.params.id;
-        let productoEditado=null;
+        let productoEditado= null;
         for (let i=0;i<productos.length;i++){
             if(productos[i].id == idProducto){
                 productos[i].nombre=valoresNuevos.nombre;

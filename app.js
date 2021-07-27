@@ -5,6 +5,7 @@ const mainRouter = require("./src/routes/mainRoutes");
 const userRouter = require("./src/routes/userRoutes");
 const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
+let session=require("express-session");
 
 app.use(methodOverride("_method"));
 
@@ -12,6 +13,7 @@ app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+app.use(session({secret: "esto es secreto!"}))
 app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/user", userRouter);
