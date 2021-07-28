@@ -13,16 +13,6 @@ module.exports={
     guardarUsuario: (req,res)=>{
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-         let usuarioNuevo={
-            user_name:req.body.user_name,
-            user_surname: req.body.user_surname,
-            user_email: req.body.user_email,
-            pass: req.body.pass,
-            user_birth: req.body.user_birth,
-            pais: req.body.pais,
-            user_address: req.body.user_address,
-            TyC: req.user.TyC
-         }
          let nuevoId=usuarios[usuarios.length-1].id +1;
          let passEncriptada = bcrypt.hashSync(req.body.pass, 10);
          let nuevoUsuario= Object.assign({id: nuevoId},req.body);
