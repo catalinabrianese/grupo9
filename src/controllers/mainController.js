@@ -4,6 +4,10 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const productoFilePath=path.join(__dirname, '../database/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
+const usuarioFilePath=path.join(__dirname, '../database/users.json');
+const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
+const usuarios=require("../database/users.json");
+
 
 module.exports={
     index: (req,res)=>{
@@ -21,39 +25,6 @@ module.exports={
             } 
         }
         res.render("./products/vistadedetalledeproducto", {producto: producto});
-    },
-    login:(req,res)=>{
-        res.render("./users/vistadelogin");
-    },
-    processLogin: function(req,res){
-        let errors=validationResult(req);
-        if(errors.isEmpty()){
-            let userJSON= fs.readFileSync("users.json",{errors: errors.errors});
-            let users;
-            if(usersJSON=""){
-                users=[];
-            }else{
-                users=JSON.parse(usersJSON);
-            }
-            for(let i=0; i <users.length;i++){
-                if(users[i].user_email == req.body.user_email){
-                    if(bcrypt.compareSync(req.body.pass, users[i].pass)){
-                        let usuarioALoguearse=users[i];
-                        break;
-                    }
-                }
-            }
-            if(usuarioALoguearse == undefined){
-                return res.render("login",{errors:[
-                    {msg: "Credenciales inválidas"}
-                ]});
-            }
-
-            req.session.usuarioLogueado=usuarioALoguearse;
-        }else{
-            return res.render("login", {errors: errors.errors})
-        }
-        
     },
     carrito: (req,res)=>{
         res.render("vistadecarrito");
