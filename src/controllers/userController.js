@@ -35,7 +35,7 @@ module.exports={
     perfilUsuario: (req,res)=>{
         let usuario = null;
         for (let i=0; i<usuarios.length; i++) {
-            if (usuarios[i].id == req.params.id){
+            if (usuarios[i].id == req.session.usuarioLogueado){
                 usuario = usuarios[i]
             } 
         }
@@ -48,36 +48,27 @@ module.exports={
     processLogin: function(req,res){
         let errors=validationResult(req);
         if(errors.isEmpty()){
-            let userJSON = fs.readFileSync('../database/users.json',{encoding: "UTF-8"})
-            let user;
-            if(userJSON=""){
-                user=[];
-            }else{
-                user=JSON.parse(userJSON);
-            }
             for(let i=0; i <users.length;i++){
-                if(user[i].user_email == req.body.user_email){
-                    if(bcrypt.compareSync(req.body.pass, user[i].pass)){
-                        let usuarioALoguearse=user[i];
+                if(users[i].user_email == req.body.user_email){
+                    if(bcrypt.compareSync(req.body.pass, users[i].pass)){
+                        req.session.usuarioLogueado=users[i].id;
+                        res.redirect("/user/perfil");
                         break;
                     }
                 }
             }
-            if(usuarioALoguearse == undefined){
+            /*if(usuarioALoguearse == undefined){
                 return res.render("users/vistadelogin",{errors:[
                     {msg: "Credenciales inválidas"}
                 ]});
-            }
+            }*/
 
-            req.session.usuarioLogueado=usuarioALoguearse;
-            res.render("./users/perfil", {usuario: req.session.usuarioLogueado});
         }else{
-           /* res.render("./users/vistadelogin",{ 
+           res.render("./users/vistadelogin",{ 
                 errors: errors.array(),
                 old: req.body 
             
-            });*/
-            return res.render("./users/vistadelogin", {errors: errors.errors})
+            });
         }
         
     },
