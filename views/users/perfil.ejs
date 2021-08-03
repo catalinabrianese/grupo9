@@ -14,7 +14,7 @@
         
         <header>
             <div class="main-header-bar">
-                <a href="/login">Inicia sesión</a>
+                <a href="/user/login">Inicia sesión</a>
                 <a href="/user/perfil"><i class="fas fa-user"></i></a>
                 <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             </div>
@@ -28,11 +28,11 @@
                     <!--HAY QUE TRAER LOS DATOS DEL USUARIO-->
                     <h1>Mi perfil</h1>
                     <br>
-                    <h4>Nombre:</h4>
+                    <h4>Nombre: <%=usuario.user_name%></h4>
                     <br>
-                    <h4>Apellido:</h4>
+                    <h4>Apellido: <%=usuario.user_surname%></h4>
                     <br>
-                    <h4>E-mail:</h4>
+                    <h4>E-mail: <%=usuario.user_email%></h4>
                     <br>
                 </section>
             </fieldset>
