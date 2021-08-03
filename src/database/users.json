@@ -978,5 +978,18 @@
   "pais": "JM",
   "user_address": "La puntilla",
   "TyC": "on"
+ },
+ {
+  "id": 114,
+  "user_name": "Ignacio",
+  "user_surname": "Martinez",
+  "user_gender": "masculino",
+  "user_email": "flo_2363@hotmail.com",
+  "pass": "$2a$10$Ujcmp8EpoPuuJUN6zPASG.tobnvjVCXJECA1TIlFt4NaxdwTihKrG",
+  "pass-confirmation": "ololo",
+  "user_birth": "2021-07-23",
+  "pais": "PY",
+  "user_address": "Tigre",
+  "TyC": "on"
  }
 ]
