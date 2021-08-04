@@ -24,6 +24,7 @@ router.get("/carrito", mainController.carrito);
 
 router.get("/crear", mainController.crear);
 router.post("/crear",uploadFile.single('imagen'), mainController.guardar);
+
 router.get("/editar/:id", mainController.editar);
 router.post("/editar/:id", mainController.actualizar);
 

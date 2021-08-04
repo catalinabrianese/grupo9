@@ -21,7 +21,7 @@ module.exports={
          nuevoUsuario.pass_confirmation = passConfirmationEncriptada;
          usuarios.push(nuevoUsuario);
          fs.writeFileSync(usuarioFilePath, JSON.stringify(usuarios,null, ' '));
-         res.redirect("/login");
+         res.redirect("/user/login");
        
         } else {
             res.render("./users/vistaderegistro",{ 
