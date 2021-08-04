@@ -51,6 +51,7 @@ module.exports={
             fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
             res.redirect('/productos');
         },
+
     products: (req,res)=>{
         res.render("./products/listadodeproductos", {productos:productos})
     },

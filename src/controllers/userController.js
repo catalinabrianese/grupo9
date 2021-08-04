@@ -21,7 +21,7 @@ module.exports={
          nuevoUsuario.pass_confirmation = passConfirmationEncriptada;
          usuarios.push(nuevoUsuario);
          fs.writeFileSync(usuarioFilePath, JSON.stringify(usuarios,null, ' '));
-         res.redirect("/login");
+         res.redirect("/user/login");
        
         } else {
             res.render("./users/vistaderegistro",{ 
@@ -77,6 +77,14 @@ module.exports={
     },
     editarperfil:(req,res)=>{
         res.render("./users/userEdit");
-    }
+    },
+
+    guardarFotoPerfil: (req,res)=>{
+        let nombreImagen=req.file.filename;
+        let agregarUsuario =  Object.assign({imagen:nombreImagen});
+        productos.push(agregarUsuario);
+        fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
+        res.redirect('/p');
+    }, 
 
 }

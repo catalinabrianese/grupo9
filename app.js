@@ -6,14 +6,18 @@ const userRouter = require("./src/routes/userRoutes");
 const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
 const session= require("express-session");
+const cookieParser = require("cookie-parser");
+
+
 
 app.use(methodOverride("_method"));
 
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use(session({secret: "esto es secreto!"}));
+app.use(session({secret: "esto es secreto!", resave: false, saveUninitialized: true} ));
 app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/user", userRouter);
@@ -26,6 +30,7 @@ app.use((req,res,next)=>{
 app.listen(process.env.PORT || 3001, () => {
     console.log("Servidor corriendo en el puerto 3001")
 });
+
 
 
 

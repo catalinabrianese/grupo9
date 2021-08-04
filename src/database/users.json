@@ -24,171 +24,18 @@
   "pais": "AR",
   "user_address": "brandsen",
   "TyC": "on"
-<<<<<<< HEAD
  },
  {
-  "id": 103,
+  "id": 3,
   "user_name": "Mateo",
   "user_surname": "Pereyra Iraola",
   "user_gender": "masculino",
-  "user_email": "mpiraola@gmail.com",
-  "pass": [
-   "Mateo123",
-   "Mateo123"
-  ],
+  "user_email": "mpiraola@hotmail.com",
+  "pass": "$2a$10$N0XlfcHA9HaCdj/g0llqce52ub.1nPavlh7HIs.uv/EjfaEMTqjaO",
+  "pass_confirmation": "$2a$10$ardGXkaws7MM.CNoTOC65.dIvfy4oGB9zFbgYIMe02o/pt0W1igK.",
   "user_birth": "1989-07-25",
   "pais": "AR",
   "user_address": "Tigre",
   "TyC": "on"
- },
- {
-  "id": 104,
-  "user_name": "ala",
-  "user_surname": "lala",
-  "user_gender": "masculino",
-  "user_email": "aass@asd.com",
-  "pass": [
-   "",
-   ""
-  ],
-  "user_birth": "2021-07-09",
-  "pais": "MX",
-  "user_address": "aqw2",
-  "TyC": "on"
- },
- {
-  "id": 105,
-  "user_name": "",
-  "user_surname": "",
-  "user_gender": "masculino",
-  "user_email": "aass@asd.com",
-  "pass": [
-   "",
-   ""
-  ],
-  "user_birth": "2021-07-09",
-  "pais": "MX",
-  "user_address": "aqw2",
-  "TyC": "on"
- },
- {
-  "id": 106,
-  "user_name": "qwe",
-  "user_surname": "123",
-  "user_email": "ad@3s.com",
-  "pass": [
-   "",
-   ""
-  ],
-  "user_birth": "2021-07-03",
-  "pais": "PE",
-  "user_address": "123",
-  "TyC": "on"
- },
- {
-  "id": 107,
-  "user_name": "qweq",
-  "user_surname": "qweq",
-  "user_email": "asda@a.com",
-  "pass": [
-   "",
-   ""
-  ],
-  "user_birth": "2021-07-07",
-  "pais": "JM",
-  "user_address": "q",
-  "TyC": "on"
- },
- {
-  "id": 108,
-  "user_name": "asdas",
-  "user_surname": "qweqwe",
-  "user_gender": "masculino",
-  "user_email": "qwewq@adsda.com",
-  "pass": [
-   "asdasd",
-   "adsasd"
-  ],
-  "user_birth": "1231-03-12",
-  "pais": "MX",
-  "user_address": "asdas",
-  "TyC": "on"
- },
- {
-  "id": 109,
-  "user_name": "Carlos",
-  "user_surname": "Tevez",
-  "user_email": "carlos@tevez.com.ar",
-  "pass": [
-   "boca",
-   "boca"
-  ],
-  "user_birth": "2021-07-07",
-  "pais": "TC",
-  "user_address": "Bombonera",
-  "TyC": "on"
- },
- {
-  "id": 110,
-  "user_name": "mateo",
-  "user_surname": "pereyra",
-  "user_email": "mpiraola@gmail.com",
-  "pass": "1234",
-  "pass-confirmation": "1234",
-  "user_birth": "2021-07-28",
-  "pais": "SP",
-  "user_address": "qweqweqwe"
- },
- {
-  "id": 111,
-  "user_name": "mateo",
-  "user_surname": "pereyra",
-  "user_email": "mpiraola@gmail.com",
-  "pass": "1234",
-  "pass-confirmation": "1234",
-  "user_birth": "2021-07-28",
-  "pais": "SP",
-  "user_address": "qweqweqwe"
- },
- {
-  "id": 112,
-  "user_name": "Francisco ",
-  "user_surname": "Carmona",
-  "user_gender": "masculino",
-  "user_email": "fran@arrr.com",
-  "pass": "pelado",
-  "pass-confirmation": "pelado",
-  "user_birth": "2021-07-05",
-  "pais": "MX",
-  "user_address": "asdasd",
-  "TyC": "on"
- },
- {
-  "id": 113,
-  "user_name": "Juan",
-  "user_surname": "Carmona",
-  "user_gender": "masculino",
-  "user_email": "juan@carmona.com",
-  "pass": "$2a$10$bUNv8n3b.3gy3vYifgtOjOJM.YVZUftf5OClA/QAQUf/E6H0hjONm",
-  "pass-confirmation": "Alamo",
-  "user_birth": "9293-02-22",
-  "pais": "JM",
-  "user_address": "La puntilla",
-  "TyC": "on"
- },
- {
-  "id": 114,
-  "user_name": "Ignacio",
-  "user_surname": "Martinez",
-  "user_gender": "masculino",
-  "user_email": "flo_2363@hotmail.com",
-  "pass": "$2a$10$Ujcmp8EpoPuuJUN6zPASG.tobnvjVCXJECA1TIlFt4NaxdwTihKrG",
-  "pass-confirmation": "ololo",
-  "user_birth": "2021-07-23",
-  "pais": "PY",
-  "user_address": "Tigre",
-  "TyC": "on"
-=======
->>>>>>> e6b0e9f5836a207a03660be814acf87004fe7770
  }
 ]

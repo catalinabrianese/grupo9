@@ -5,6 +5,17 @@ const {body} = require("express-validator");
 const userController = require("../controllers/userController");
 const logDBMiddleware = require("../middlewares/logDBMiddleware");
 let guestMiddleware = require("../middlewares/guestMiddleware");
+const multer = require("multer");
+const multerDS = multer.diskStorage({ 
+  destination: function (req, file, cb) { 
+     cb(null, path.join(__dirname, '../../public/imgProf')); 
+  }, 
+  filename: function (req, file, cb) { 
+      let newImage=Date.now() + path.extname(file.originalname);
+     cb(null,newImage);
+  }
+  });
+const uploadFile = multer({ storage: multerDS });
 
 
 //validaciones
@@ -32,6 +43,8 @@ router.post("/login",[
   body("user_email").isEmail().withMessage("Email inválido"),
   body("pass").notEmpty().withMessage("Debe ingresar la contraseña")
 ], userController.processLogin);
+
+router.post("/imagenPerfil", uploadFile.single('imagen'), userController.guardarFotoPerfil);
 
 router.get("/register", validateCreateForm, userController.register);
 router.post("/register", logDBMiddleware, validateCreateForm, userController.guardarUsuario);

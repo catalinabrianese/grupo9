@@ -34,7 +34,15 @@
                     <br>
                     <h4>E-mail: <%=usuario.user_email%></h4>
                     <br>
-                </section>
+                    <form action="/imagenPerfil" method="POST" enctype="multipart/form-data">
+                    <label><h4>Carga tu imágen de perfil</h4></label>
+                    <input type="file"  id="ImagenPerfil" name="imagen"></input>
+                    </form>
+                
+                <span>
+                    <button class="button2" type="submit">Enviar</button>
+                </span>
+            </section>
             </fieldset>
         </form>
         <footer class="footer-dark">
