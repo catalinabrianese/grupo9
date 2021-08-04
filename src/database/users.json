@@ -24,5 +24,18 @@
   "pais": "AR",
   "user_address": "brandsen",
   "TyC": "on"
+ },
+ {
+  "id": 3,
+  "user_name": "Mateo",
+  "user_surname": "Pereyra Iraola",
+  "user_gender": "masculino",
+  "user_email": "mpiraola@hotmail.com",
+  "pass": "$2a$10$N0XlfcHA9HaCdj/g0llqce52ub.1nPavlh7HIs.uv/EjfaEMTqjaO",
+  "pass_confirmation": "$2a$10$ardGXkaws7MM.CNoTOC65.dIvfy4oGB9zFbgYIMe02o/pt0W1igK.",
+  "user_birth": "1989-07-25",
+  "pais": "AR",
+  "user_address": "Tigre",
+  "TyC": "on"
  }
 ]
