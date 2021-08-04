@@ -52,6 +52,10 @@ module.exports={
                 if(users[i].user_email == req.body.user_email){
                     if(bcrypt.compareSync(req.body.pass, users[i].pass)){
                         req.session.usuarioLogueado=users[i].id;
+                        if (req.body.recordame != undefined) {
+                            res.cookie("recordame", req.session.usuarioLogueado.user_email, { maxAge: 60000 })
+                            res.render("Success!")
+                        }
                         res.redirect("/user/perfil");
                         break;
                     }
@@ -72,6 +76,13 @@ module.exports={
         }
         
     },
+
+    logout: (req, res) => {
+        res.clearCookie('user_email');
+        req.session.destroy();
+        return res.redirect('/');
+    },
+
     register:(req,res)=>{
         res.render("./users/vistaderegistro");
     },
