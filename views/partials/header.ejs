@@ -1,14 +1,16 @@
 
 <header class="main-header">
     <div class="main-header-bar">
-         <% if(typeof (usuarioLogueado) == null){ %>
+        <!-- <% if(typeof (usuarioLogueado) != null){ %>
             <a href="/user/logout">Cerrar sesión</a>
             <a href="/user/perfil"><i class="fas fa-user"></i></a>
          <%} else { %> 
             <a href="/user/login">Iniciar sesión</a>
             <a href="/user/register">Registrarse</a>
-          <%} %> 
-      
+          <%} %> -->
+        <a href="/user/login">Iniciar sesión</a>
+        <a href="/user/register">Registrarse</a>
+        <a href="/user/perfil"><i class="fas fa-user"></i></a>
         <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
     </div>
     <h1 class="titulo-principal"><a href="/">Seda & Brillo</a></h1>

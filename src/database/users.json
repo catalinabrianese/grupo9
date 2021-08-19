@@ -37,5 +37,18 @@
   "pais": "AR",
   "user_address": "Tigre",
   "TyC": "on"
+ },
+ {
+  "id": 4,
+  "user_name": "Matias",
+  "user_surname": "Brianese",
+  "user_gender": "masculino",
+  "user_email": "matias_brianese@hotmail.com",
+  "pass": "$2a$10$VWAR20M6ugtnIidGZPY5q.AdpqyOzBodC3hC.BIo3q47wdTCrGhzu",
+  "pass_confirmation": "$2a$10$oxR/GC/LgZ3d7KCvc0fLn.itozFX7thS.AxnaSsg0WJdApPasCyvG",
+  "user_birth": "1994-12-25",
+  "pais": "AR",
+  "user_address": "brandsen",
+  "TyC": "on"
  }
 ]
