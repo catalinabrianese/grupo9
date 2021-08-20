@@ -38,6 +38,8 @@
                     <br>
                     <input placeholder="Contraseña" type="password" name="pass" value="<%= locals.old && old.pass ? old.pass : ''%>">
                     <br>
+                    <label for=""><h4>Recordarme</h4></label>    
+                    <input type="checkbox" name="recordame">
                     <h4>¿Aún no te registraste? <a href="/user/register">Regístrate</a>
                     <a href="/">¿Olvidaste tu contraseña?</a>
                     </h4>
@@ -45,6 +47,7 @@
                         <button class="button2" type="submit">Enviar</button>
                     </span>
                 </fieldset>
+                
             </form>
         </section>
         <footer class="footer-dark">
