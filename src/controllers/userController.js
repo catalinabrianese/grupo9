@@ -1,9 +1,9 @@
 const { response } = require("express");
 const fs = require("fs");
 const path = require("path");
-const usuarioFilePath=path.join(__dirname, '../database/users.json');
+const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../database/users.json");
+const usuarios=require("../data/users.json");
 const {validationResult, check} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
@@ -91,11 +91,19 @@ module.exports={
     },
 
     guardarFotoPerfil: (req,res)=>{
+        let usuario=null;
+        let id=null;
+        for (let i=0; i<usuarios.length; i++) {
+            if (usuarios[i].id == req.session.usuarioLogueado){
+                usuario=usuarios[i];
+                id=usuarios[i].id;
+            } 
+        }
         let nombreImagen=req.file.filename;
-        let agregarUsuario =  Object.assign({imagen:nombreImagen});
-        productos.push(agregarUsuario);
-        fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
-        res.redirect('/p');
+        let agregarUsuario =  Object.assign({imagen:nombreImagen},usuario);
+        usuarios[id].push(agregarUsuario);
+        fs.writeFileSync(req.destination, JSON.stringify(usuarios,null, ' '));
+        res.redirect('/perfil');
     }, 
 
 }

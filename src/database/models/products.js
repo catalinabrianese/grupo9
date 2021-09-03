@@ -1,8 +1,6 @@
 const { Sequelize } = require("sequelize/types");
     function productsData(sequelize, Datatypes){
 
-    
-
     alias = 'products';
 
     cols = {
@@ -12,9 +10,9 @@ const { Sequelize } = require("sequelize/types");
       descuento: {type: Datatypes.INTEGER},
       descripcion: {type: Datatypes.STRING(500)},
       precio: { type: Datatypes.INTEGER},
-      tamaño: { type: Datatypes.INTEGER},
-  
+      tamano: { type: Datatypes.INTEGER},
     }
+    
     config = {camelCase: false, timestamps: false};
 
     const products = sequelize.define(alias,cols,config)

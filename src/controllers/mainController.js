@@ -1,12 +1,12 @@
-const productos=require("../database/products");
+const productos=require("../data/products");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
-const productoFilePath=path.join(__dirname, '../database/products.json');
+const productoFilePath=path.join(__dirname, '../data/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
-const usuarioFilePath=path.join(__dirname, '../database/users.json');
+const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../database/users.json");
+const usuarios=require("../data/users.json");
 
 
 module.exports={
