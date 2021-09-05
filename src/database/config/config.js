@@ -2,8 +2,8 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "grupo9",
-    "host": "127.0.0.1",
+    "database": "grupo9_bd",
+    "host": "mysql-grupo9.alwaysdata.net",
     "dialect": "mysql",
     "port": 3306
   },
