@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize/types");
     function usersData(sequelize, Datatypes){
 
-    alias = 'products';
+    alias = 'Usuario';
 
     cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -16,11 +16,21 @@ const { Sequelize } = require("sequelize/types");
       user_address:{type: Datatypes.STRING(200)},
     }
     
-    config = {camelCase: false, timestamps: false};
+    let config = {camelCase: false, timestamps: false};
 
-    const users = sequelize.define(alias,cols,config)
+    const Usuario = sequelize.define(alias,cols,config);
 
-    return users;
+    
+    Usuario.associate = function(models){
+      Usuario.belongsToMany(models.Productos, {
+        as:"productos",
+        through: "carrito",
+        foreignKey:"usuarioFK",
+        otherKey: "productoFK",
+        timestamps: false
+      });
+    }
+    return Usuario;
 
    }
 

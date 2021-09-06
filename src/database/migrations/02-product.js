@@ -2,7 +2,7 @@
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        return queryInterface.createTable("usuario",{
+        return queryInterface.createTable("producto",{
             id:{type: Sequelize.Datatypes.INTEGER, primaryKey:true, allowNull: false, autoIncrement: true},
             user_name:{type: Sequelize.Datatypes.STRING(50)},
             user_surname: {type: Sequelize.Datatypes.STRING(50)},
@@ -13,18 +13,12 @@ module.exports = {
             user_birth: {type: Sequelize.Datatypes.DATE},
             pais:{type: Sequelize.Datatypes.STRING(3)},
             user_address:{type: Sequelize.Datatypes.STRING(200)},
-            productoFK:{
-                type: Sequelize.Datatypes.INTEGER(10).UNSIGNED,
-                references:{
-                    model: "usuario",
-                    key:"id"
-                }
-            },
+            
             createdAt:{type: Sequelize.Datatypes.DATE},
             updatedAt:{type: Sequelize.Datatypes.DATE}
         })
     },
     down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable("usuario");
+      return queryInterface.dropTable("producto");
     }
  }
