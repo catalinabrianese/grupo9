@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize/types");
     function usersData(sequelize, Datatypes){
 
-    alias = 'products';
+    alias = 'users';
 
     cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
