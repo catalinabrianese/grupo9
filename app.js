@@ -7,10 +7,27 @@ const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
 const session= require("express-session");
 const cookieParser = require("cookie-parser");
+<<<<<<< HEAD
 
 
 
 
+=======
+/*const db = require("./src/database/models");
+const Sequelize = require("sequelize");
+
+const sequelize = new Sequelize(db,)
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+*/
+>>>>>>> eb2d5ad6de82044c9fcfeea6d76ea9f421d65a1c
 app.use(methodOverride("_method"));
 
 app.use(cookieParser());
