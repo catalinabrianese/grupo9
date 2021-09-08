@@ -24,7 +24,7 @@ const { Sequelize } = require("sequelize/types");
     Usuario.associate = function(models){
       Usuario.belongsToMany(models.Productos, {
         as:"productos",
-        through: "carrito",
+        through: "carrito", /*crea la tabla intermedia*/
         foreignKey:"usuarioFK",
         otherKey: "productoFK",
         timestamps: false

@@ -1,3 +1,4 @@
+
 module.exports = {
   "development": {
     "username": "grupo9_free",
@@ -19,6 +20,6 @@ module.exports = {
     "password": "Grupo9!",
     "database": "grupo9_bd",
     "host": "mysql-grupo9.alwaysdata.net",
-    "dialect": "mysql",
+    "dialect": "mysql"
   }
 }
