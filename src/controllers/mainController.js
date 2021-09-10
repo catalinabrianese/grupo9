@@ -80,7 +80,13 @@ module.exports={
             })
     },
     eliminar: (req,res)=>{
-        //ELIMINA EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
+
+        db.Producto.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        /*
         let idProducto=req.params.id;
         for(let i=0;i<productos.length; i++){
             if (productos[i].id == idProducto){
@@ -89,11 +95,25 @@ module.exports={
             }
         }
         fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
-        res.render("../views/products/listadodeproductos", {productos:productos});
+        res.render("../views/products/listadodeproductos", {productos:productos});*/
         
     },
     actualizar: (req,res)=>{
-        let valoresNuevos= req.body;
+        db.Producto.update({
+            imagen:req.body.imagen,
+            nombre: req.body.user_surname,
+            descuento: req.body.user_gender,
+            descripcion: req.body.user_email,
+            precio: req.body.pass,
+            tamano: req.body.user_birth,
+        }),{
+            where: {
+                id:req.params.id
+            }
+        }
+        res.redirect("/editar/" + req.params.id);
+
+        /*let valoresNuevos= req.body;
         let idProducto= req.params.id;
         let productoEditado= null;
         for (let i=0;i<productos.length;i++){
@@ -109,7 +129,7 @@ module.exports={
             }
         }
         fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
-        res.render("./products/vistadedetalledeproducto",{producto: productoEditado});
+        res.render("./products/vistadedetalledeproducto",{producto: productoEditado});*/
     }
 }
 

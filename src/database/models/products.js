@@ -1,22 +1,20 @@
-const { Sequelize } = require("sequelize/types");
+module.exports=function(sequelize, Datatypes){
 
-    function productsData(sequelize, Datatypes){
+  alias = 'Producto';
 
-      alias = 'Producto';
-
-      cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
-        imagen: {type: Datatypes.STRING(500)},
-        nombre: {type: Datatypes.STRING(50)},
-        descuento: {type: Datatypes.INTEGER},
-        descripcion: {type: Datatypes.STRING(500)},
-        precio: { type: Datatypes.INTEGER},
-        tamano: { type: Datatypes.INTEGER},
-    }
+  cols = {
+    id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
+    imagen: {type: Datatypes.STRING(500)},
+    nombre: {type: Datatypes.STRING(50)},
+    descuento: {type: Datatypes.INTEGER},
+    descripcion: {type: Datatypes.STRING(500)},
+    precio: { type: Datatypes.INTEGER},
+    tamano: { type: Datatypes.INTEGER},
+  }
     
-    const config = {camelCase: false, timestamps: false};
+  const config = {camelCase: false, timestamps: false};
 
-    const Producto = sequelize.define(alias,cols,config)
+  const Producto = sequelize.define(alias,cols,config)
 
     Producto.associate = function(models){
         Producto.belongsToMany(models.Usuario, {
@@ -31,5 +29,3 @@ const { Sequelize } = require("sequelize/types");
     return Producto;
 
    }
-
-    module.exports(productsData);

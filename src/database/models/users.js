@@ -1,5 +1,5 @@
-const { Sequelize } = require("sequelize/types");
-    function usersData(sequelize, Datatypes){
+/*const { Sequelize } = require("/sequelize/types");*/
+module.exports=function(sequelize, Datatypes){
 
     alias = 'Usuario';
 
@@ -33,5 +33,3 @@ const { Sequelize } = require("sequelize/types");
     return Usuario;
 
    }
-
-    module.exports(usersData);
