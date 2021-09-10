@@ -14,7 +14,7 @@ const { Sequelize } = require("sequelize/types");
       user_birth: {type: Datatypes.DATE},
       pais:{type: Datatypes.STRING(3)},
       user_address:{type: Datatypes.STRING(200)},
-    }
+    };
     
     let config = {camelCase: false, timestamps: false};
 
@@ -22,8 +22,8 @@ const { Sequelize } = require("sequelize/types");
 
     
     Usuario.associate = function(models){
-      Usuario.belongsToMany(models.Productos, {
-        as:"productos",
+      Usuario.belongsToMany(models.Producto, {
+        as:"usuario",
         through: "carrito", /*crea la tabla intermedia*/
         foreignKey:"usuarioFK",
         otherKey: "productoFK",
