@@ -6,11 +6,25 @@ const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
 const usuarios=require("../data/users.json");
 const {validationResult, check} = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require("../database/models");
 
 
 
 module.exports={
     guardarUsuario: (req,res)=>{
+
+        db.Usuario.create({
+            user_name:req.body.user_name,
+            user_surname: req.body.user_surname,
+            user_gender: req.body.user_gender,
+            user_email: req.body.user_email,
+            pass: req.body.pass,
+            user_birth: req.body.user_birth,
+            pais: req.body.pais,
+            user_address: req.body.user_address
+        });
+        res.redirect("/");
+        /*
         let errors = validationResult(req);
         if (errors.isEmpty()) {
          let nuevoId=usuarios[usuarios.length-1].id +1;
@@ -29,7 +43,7 @@ module.exports={
                 old: req.body 
             
             });
-        }
+        }*/
        
     },
     perfilUsuario: (req,res)=>{
