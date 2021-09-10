@@ -20,8 +20,8 @@ module.exports = {
                     key:"id"
                 }
             },
-            createdAt:{type: Sequelize.DataTypes.DATE},
-            updatedAt:{type: Sequelize.DataTypes.DATE}
+                createdAt:{type: Sequelize.DataTypes.DATE},
+                updatedAt:{type: Sequelize.DataTypes.DATE}
         })
     },
     down: (queryInterface, Sequelize) => {
