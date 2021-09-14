@@ -21,7 +21,7 @@ module.exports={
         res.render('./users/vistaderegistro');
     },
     detailproducts:(req,res)=>{
-        db.Productos.findByPk(req.params.id, { include: [{association: "carrito"}]})
+        db.Productos.findByPk(req.params.id)
             .then(function(productos){
                 res.render("./products/vistadedetalledeproducto", {producto: productos});
             });
