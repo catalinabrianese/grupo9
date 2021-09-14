@@ -1,7 +1,7 @@
-const { Sequelize } = require("sequelize/types");
-    function usersData(sequelize, Datatypes){
+/*const { Sequelize } = require("/sequelize/types");*/
+module.exports=function(sequelize, Datatypes){
 
-    alias = 'Usuario';
+    alias = 'Usuarios';
 
     cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -16,22 +16,21 @@ const { Sequelize } = require("sequelize/types");
       user_address:{type: Datatypes.STRING(200)},
     };
     
-    let config = {camelCase: false, timestamps: false};
+    let config = {camelCase: false, timestamps: false, tableName:"usuario"};
 
-    const Usuario = sequelize.define(alias,cols,config);
+    const Usuarios = sequelize.define(alias,cols,config);
 
     
-    Usuario.associate = function(models){
-      Usuario.belongsToMany(models.Producto, {
+    Usuarios.associate = function(models){
+      Usuarios.belongsToMany(models.Productos, {
         as:"usuario",
         through: "carrito", /*crea la tabla intermedia*/
         foreignKey:"usuarioFK",
         otherKey: "productoFK",
         timestamps: false
       });
+
     }
-    return Usuario;
+    return Usuarios;
 
    }
-
-    module.exports(usersData);

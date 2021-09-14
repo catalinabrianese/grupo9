@@ -1,24 +1,27 @@
-const productos=require("../data/products");
-const fs = require("fs");
+/*const productos = require("../data/products");*/
+/*const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const productoFilePath=path.join(__dirname, '../data/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../data/users.json");
-const db = require("../database/models");
+const usuarios=require("../data/users.json");*/
+const db = require('../database/models');
 
 module.exports={
     index: (req,res)=>{
-        res.render("index", {products: productos});
-
+        /*console.log(db.Products)*/
+        db.Productos.findAll()
+            .then(function(productos){
+                res.render("index", {products: productos})
+            })
     },
     register: (req,res)=>{
         res.render('./users/vistaderegistro');
     },
     detailproducts:(req,res)=>{
-        db.Producto.findByPk(req.params.id, { include: [{association: "carrito"}]})
+        db.Productos.findByPk(req.params.id, { include: [{association: "carrito"}]})
             .then(function(productos){
                 res.render("./products/vistadedetalledeproducto", {producto: productos});
             });
@@ -35,7 +38,7 @@ module.exports={
         res.render("vistadecarrito");
     },
     editar: (req,res)=>{
-        db.Producto.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id)
             .then(function(producto){
                 res.render("./products/crearproducto",{producto:producto})
             })
@@ -55,13 +58,13 @@ module.exports={
     },
     guardar: (req,res)=>{
 
-        db.Producto.create({
-            imagen:req.body.imagen,
-            nombre: req.body.user_surname,
-            descuento: req.body.user_gender,
-            descripcion: req.body.user_email,
-            precio: req.body.pass,
-            tamano: req.body.user_birth,
+        db.Productos.create({
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            tamano: req.body.tamano,
         });
         res.redirect("/detalledeproducto");
         /*
@@ -74,13 +77,19 @@ module.exports={
     },
 
     products: (req,res)=>{
-        db.Producto.findAll()
+        db.Productos.findAll()
             .then(function(productos){
                 res.render("./products/listadodeproductos", {productos:productos})
             })
     },
     eliminar: (req,res)=>{
-        //ELIMINA EL PRODUCTO DE LA BASE DE DATOS PRODUCTS.JSON
+
+        db.Productos.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        /*
         let idProducto=req.params.id;
         for(let i=0;i<productos.length; i++){
             if (productos[i].id == idProducto){
@@ -89,11 +98,25 @@ module.exports={
             }
         }
         fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, ' '));
-        res.render("../views/products/listadodeproductos", {productos:productos});
+        res.render("../views/products/listadodeproductos", {productos:productos});*/
         
     },
     actualizar: (req,res)=>{
-        let valoresNuevos= req.body;
+        db.Productos.update({
+            imagen:req.body.imagen,
+            nombre: req.body.user_surname,
+            descuento: req.body.user_gender,
+            descripcion: req.body.user_email,
+            precio: req.body.pass,
+            tamano: req.body.user_birth,
+        }),{
+            where: {
+                id:req.params.id
+            }
+        }
+        res.redirect("/editar/" + req.params.id);
+
+        /*let valoresNuevos= req.body;
         let idProducto= req.params.id;
         let productoEditado= null;
         for (let i=0;i<productos.length;i++){
@@ -109,7 +132,7 @@ module.exports={
             }
         }
         fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
-        res.render("./products/vistadedetalledeproducto",{producto: productoEditado});
+        res.render("./products/vistadedetalledeproducto",{producto: productoEditado});*/
     }
 }
 
