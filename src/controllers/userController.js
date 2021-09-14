@@ -1,24 +1,24 @@
 const { response } = require("express");
-const fs = require("fs");
+/*const fs = require("fs");
 const path = require("path");
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../data/users.json");
+/*const usuarios=require("../data/users.json");*/
 const {validationResult, check} = require('express-validator');
 const bcrypt = require('bcryptjs');
-const db = require("../database/models");
+const db = require('../database/models');
 
 
 
 module.exports={
     guardarUsuario: (req,res)=>{
 
-        db.Usuario.create({
+        db.Usuarios.create({
             user_name:req.body.user_name,
             user_surname: req.body.user_surname,
             user_gender: req.body.user_gender,
             user_email: req.body.user_email,
-            pass: req.body.pass,
+            pass: req.body.pass, /*bcrypt.hashSync(req.body.pass, 10)*/
             user_birth: req.body.user_birth,
             pais: req.body.pais,
             user_address: req.body.user_address
@@ -118,6 +118,6 @@ module.exports={
         usuarios[id].push(agregarUsuario);
         fs.writeFileSync(req.destination, JSON.stringify(usuarios,null, ' '));
         res.redirect('/perfil');
-    }, 
+    }
 
 }

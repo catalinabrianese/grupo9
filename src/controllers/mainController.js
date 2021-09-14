@@ -1,24 +1,27 @@
-const productos=require("../data/products");
-const fs = require("fs");
+/*const productos = require("../data/products");*/
+/*const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const productoFilePath=path.join(__dirname, '../data/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
-const usuarios=require("../data/users.json");
-const db = require("../database/models");
+const usuarios=require("../data/users.json");*/
+const db = require('../database/models');
 
 module.exports={
     index: (req,res)=>{
-        res.render("index", {products: productos});
-
+        /*console.log(db.Products)*/
+        db.Productos.findAll()
+            .then(function(productos){
+                res.render("index", {products: productos})
+            })
     },
     register: (req,res)=>{
         res.render('./users/vistaderegistro');
     },
     detailproducts:(req,res)=>{
-        db.Producto.findByPk(req.params.id, { include: [{association: "carrito"}]})
+        db.Productos.findByPk(req.params.id, { include: [{association: "carrito"}]})
             .then(function(productos){
                 res.render("./products/vistadedetalledeproducto", {producto: productos});
             });
@@ -35,7 +38,7 @@ module.exports={
         res.render("vistadecarrito");
     },
     editar: (req,res)=>{
-        db.Producto.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id)
             .then(function(producto){
                 res.render("./products/crearproducto",{producto:producto})
             })
@@ -55,13 +58,13 @@ module.exports={
     },
     guardar: (req,res)=>{
 
-        db.Producto.create({
-            imagen:req.body.imagen,
-            nombre: req.body.user_surname,
-            descuento: req.body.user_gender,
-            descripcion: req.body.user_email,
-            precio: req.body.pass,
-            tamano: req.body.user_birth,
+        db.Productos.create({
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            tamano: req.body.tamano,
         });
         res.redirect("/detalledeproducto");
         /*
@@ -74,14 +77,14 @@ module.exports={
     },
 
     products: (req,res)=>{
-        db.Producto.findAll()
+        db.Productos.findAll()
             .then(function(productos){
                 res.render("./products/listadodeproductos", {productos:productos})
             })
     },
     eliminar: (req,res)=>{
 
-        db.Producto.destroy({
+        db.Productos.destroy({
             where:{
                 id:req.params.id
             }
@@ -99,7 +102,7 @@ module.exports={
         
     },
     actualizar: (req,res)=>{
-        db.Producto.update({
+        db.Productos.update({
             imagen:req.body.imagen,
             nombre: req.body.user_surname,
             descuento: req.body.user_gender,

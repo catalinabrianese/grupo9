@@ -1,6 +1,7 @@
+
 module.exports=function(sequelize, Datatypes){
 
-  alias = 'Producto';
+  alias = 'Productos'
 
   cols = {
     id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -12,20 +13,20 @@ module.exports=function(sequelize, Datatypes){
     tamano: { type: Datatypes.INTEGER},
   }
     
-  const config = {camelCase: false, timestamps: false};
+  const config = {camelCase: false, timestamps: true, tableName:"producto"}
 
-  const Producto = sequelize.define(alias,cols,config)
+  const Productos = sequelize.define(alias,cols,config);
 
-    Producto.associate = function(models){
-        Producto.belongsToMany(models.Usuario, {
+    Productos.associate = function(models){
+        Productos.belongsToMany(models.Usuarios, {
           as:"producto",
           through: "carrito",
           foreignKey:"productoFK",
           otherKey: "usuarioFK",
           timestamps: false
-        });
+        })
     }
 
-    return Producto;
+  return Productos
 
-   }
+}

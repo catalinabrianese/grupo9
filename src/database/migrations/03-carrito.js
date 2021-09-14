@@ -1,4 +1,4 @@
-"use strict";
+/*"use strict";
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
@@ -9,7 +9,7 @@ module.exports = {
                 allowNull: false,
                 references:{
                     model:"usuario",
-                    key:"id"
+                    key:"usuarioFK"
                 }
             },
             productosFK:{
@@ -17,7 +17,7 @@ module.exports = {
                 allowNull: false,
                 references:{
                     model:"producto",
-                    key:"id"
+                    key:"productosFK"
                 }
             },
             createdAt:{type: Sequelize.DataTypes.DATE},
@@ -27,4 +27,4 @@ module.exports = {
     down: (queryInterface, Sequelize) => {
       return queryInterface.dropTable("carrito");
     }
-  }
+}*/
