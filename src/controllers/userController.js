@@ -13,16 +13,20 @@ const db = require('../database/models');
 module.exports={
     guardarUsuario: (req,res)=>{
 
+        let p = bcrypt.hashSync(req.body.pass, 10)
         db.Usuarios.create({
             user_name:req.body.user_name,
             user_surname: req.body.user_surname,
             user_gender: req.body.user_gender,
             user_email: req.body.user_email,
-            pass: req.body.pass, /*bcrypt.hashSync(req.body.pass, 10)*/
+            pass: p,
             user_birth: req.body.user_birth,
             pais: req.body.pais,
-            user_address: req.body.user_address
+            user_address: req.body.user_address,
+            rol: 0,
         });
+
+    
         res.redirect("/");
         /*
         let errors = validationResult(req);
@@ -47,20 +51,52 @@ module.exports={
        
     },
     perfilUsuario: (req,res)=>{
-        let usuario = null;
+        /*let usuario = null;
         for (let i=0; i<usuarios.length; i++) {
             if (usuarios[i].id == req.session.usuarioLogueado){
                 usuario = usuarios[i]
             } 
-        }
-        res.render("./users/perfil",{usuario: usuario});
+        } */
+        let usuario1 = req.session.usuarioLogueado;
+
+        res.render("../views/users/vistadelogin",{usuario: usuario1});
         
     },
     login:(req,res)=>{
         res.render("./users/vistadelogin");
     },
     processLogin: function(req,res){
-        let errors=validationResult(req);
+
+         db.Usuarios.findOne({
+         where: {
+         user_email: req.body.user_email
+        }
+             })
+     .then(function(usuario){
+        
+           
+           if (usuario != null) {
+
+            let userlog = {
+                id : usuario.id,
+                user_name: usuario.user_name,
+                user_surname: usuario.user_surname,
+                user_email: usuario.user_email,
+                user_birth: usuario.user_birth,
+                user_addres: usuario.user_address
+            }
+        
+            if(bcrypt.compareSync(req.body.pass, usuario.pass)){
+             req.session.usuarioLogueado= userlog
+             res.render("../views/users/perfil", {usuario: userlog})
+            }
+                   
+        }
+     }) 
+     
+     
+
+     /*    let errors=validationResult(req);
         if(errors.isEmpty()){
             for(let i=0; i <users.length;i++){
                 if(users[i].user_email == req.body.user_email){
@@ -74,21 +110,21 @@ module.exports={
                         break;
                     }
                 }
-            }
+            } */
             /*if(usuarioALoguearse == undefined){
                 return res.render("users/vistadelogin",{errors:[
                     {msg: "Credenciales inválidas"}
                 ]});
             }*/
 
-        }else{
+        /* }else{
            res.render("./users/vistadelogin",{ 
                 errors: errors.array(),
                 old: req.body 
             
             });
         }
-        
+        */
     },
 
     logout: (req, res) => {

@@ -4,8 +4,8 @@ function recordameMiddleware(req, res, next) {
     
 
 
-    if (req.cookies.recordame != undefined &&
-     req.session.usuarioL   )
+    //if (req.cookies.recordame != undefined &&
+    // req.session.usuario   )
 }
 
 module.exports = recordameMiddleware;
