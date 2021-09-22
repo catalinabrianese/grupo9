@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use(session({secret: "esto es secreto!", resave: false, saveUninitialized: true} ));
+app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: true} ));
 app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/user", userRouter);
