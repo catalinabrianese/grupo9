@@ -6,12 +6,13 @@ const userController = require("../controllers/userController");
 const logDBMiddleware = require("../middlewares/logDBMiddleware");
 let guestMiddleware = require("../middlewares/guestMiddleware");
 const multer = require("multer");
+const db = require('../database/models');
 const multerDS = multer.diskStorage({ 
   destination: function (req, file, cb) { 
      cb(null, path.join(__dirname, '../../public/imgProf')); 
   }, 
   filename: function (req, file, cb) { 
-      let newImage=Date.now() + path.extname(file.originalname);
+      let newImage=/*Date.now() + path.extname(*/file.originalname/*)*/;
      cb(null,newImage);
   }
   });
