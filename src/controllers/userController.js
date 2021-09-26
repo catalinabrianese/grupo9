@@ -1,5 +1,5 @@
 const { response } = require("express");
-/*const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
@@ -57,43 +57,47 @@ module.exports={
                 usuario = usuarios[i]
             } 
         } */
-        let usuario1 = req.session.usuarioLogueado;
-
-        res.render("../views/users/vistadelogin",{usuario: usuario1});
+        //let usuario1 = req.session.usuarioLogueado;
+        
+        res.render("../views/users/perfil", {usuario: req.session.usuarioLogueado});
         
     },
     login:(req,res)=>{
-        res.render("./users/vistadelogin");
+        res.render("./users/vistadelogin", {errors: undefined, usuarioLogueado: undefined});
     },
     processLogin: function(req,res){
 
-         db.Usuarios.findOne({
-         where: {
-         user_email: req.body.user_email
-        }
-             })
-     .then(function(usuario){
+        db.Usuarios.findOne({
+        where: {
+        user_email: req.body.user_email
+       }
+            })
+    .then(function(usuario){
         
-           
-           if (usuario != null) {
+          
+          if (usuario != null) {
 
-            let userlog = {
-                id : usuario.id,
-                user_name: usuario.user_name,
-                user_surname: usuario.user_surname,
-                user_email: usuario.user_email,
-                user_birth: usuario.user_birth,
-                user_addres: usuario.user_address
-            }
-        
-            if(bcrypt.compareSync(req.body.pass, usuario.pass)){
-             req.session.usuarioLogueado= userlog
-             res.render("../views/users/perfil", {usuario: userlog})
-            }
-                   
-        }
-     }) 
-     
+           let userlog = {
+               id : usuario.id,
+               user_name: usuario.user_name,
+               user_surname: usuario.user_surname,
+               user_email: usuario.user_email,
+               user_birth: usuario.user_birth,
+               user_addres: usuario.user_address
+           }
+       
+           if(bcrypt.compareSync(req.body.pass, usuario.pass)){
+            req.session.usuarioLogueado= userlog
+           
+            res.render("../views/users/perfil", {usuario: userlog})
+           }
+                  
+       }
+       else { res.redirect('/')}
+    })
+    
+           
+    
      
 
      /*    let errors=validationResult(req);
@@ -128,8 +132,10 @@ module.exports={
     },
 
     logout: (req, res) => {
-        res.clearCookie('user_email');
-        req.session.destroy();
+        //res.clearCookie('user_email');
+        //req.session.destroy();
+        req.session.usuarioLogueado = undefined;
+        console.log('hola');
         return res.redirect('/');
     },
 
