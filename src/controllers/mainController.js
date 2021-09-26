@@ -12,18 +12,18 @@ const db = require('../database/models');
 module.exports={
     index: (req,res)=>{
         /*console.log(db.Products)*/
-        db.Productos.findAll()
+         db.Productos.findAll()
             .then(function(productos){
-                res.render("index", {products: productos})
+                res.render("index", {products: productos, usuarioLogueado: req.session.usuarioLogueado})
             })
     },
     register: (req,res)=>{
-        res.render('./users/vistaderegistro');
+        res.render('./users/vistaderegistro', {usuarioLogueado: req.session.usuarioLogueado});
     },
     detailproducts:(req,res)=>{
         db.Productos.findByPk(req.params.id)
             .then(function(productos){
-                res.render("./products/vistadedetalledeproducto", {producto: productos});
+                res.render("./products/vistadedetalledeproducto",  {producto: productos, usuarioLogueado: req.session.usuarioLogueado});
             });
 
             /*let producto = null;
@@ -40,7 +40,7 @@ module.exports={
     editar: (req,res)=>{
         db.Productos.findByPk(req.params.id)
             .then(function(producto){
-                res.render("./products/crearproducto",{producto:producto})
+                res.render("./products/crearproducto",{producto:producto, usuarioLogueado: req.session.usuarioLogueado})
             })
 
         /*let producto = null;
@@ -66,7 +66,7 @@ module.exports={
             precio: req.body.precio,
             tamano: req.body.tamano,
         });
-        res.redirect("/detalledeproducto");
+        res.redirect("/detalledeproducto", {usuarioLogueado: req.session.usuarioLogueado});
         /*
             let nombreImagen=req.file.filename;
             let idNuevo = productos[productos.length-1].id + 1;
@@ -79,7 +79,7 @@ module.exports={
     products: (req,res)=>{
         db.Productos.findAll()
             .then(function(productos){
-                res.render("./products/listadodeproductos", {productos:productos})
+                res.render("./products/listadodeproductos", {productos:productos, usuarioLogueado: req.session.usuarioLogueado})
             })
     },
     eliminar: (req,res)=>{

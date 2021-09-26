@@ -45,6 +45,8 @@ router.post("/login",[
   body("pass").notEmpty().withMessage("Debe ingresar la contraseña")
 ], userController.processLogin);
 
+router.get("/logout", userController.logout);
+
 router.post("/imagenPerfil", uploadFile.single('imagen'), userController.guardarFotoPerfil);
 
 router.get("/register", validateCreateForm, userController.register);

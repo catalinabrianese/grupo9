@@ -36,6 +36,10 @@
                     <br> 
                     <input placeholder="E-mail" type="email" id="email" name="user_email" value="<%= locals.old && old.user_email ? old.user_email : ''%>">
                     <br>
+              
+                    <% if (errors) { %>
+                        <div> error de logueo </div>
+                    <% } %>
                     <input placeholder="Contraseña" type="password" name="pass" value="<%= locals.old && old.pass ? old.pass : ''%>">
                     <br>
                     <label for=""><h4>Recordarme</h4></label>    
