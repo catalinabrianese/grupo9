@@ -35,7 +35,7 @@ app.use("/user", userRouter);
 app.set("view engine", "ejs");
 
 app.use((req,res,next)=>{
-    res.status(404).render("not-found");
+    res.status(404).render("not-found",);
 });
 
 app.listen(process.env.PORT || 3001, () => {
