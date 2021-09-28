@@ -140,7 +140,7 @@ module.exports={
     },
 
     register:(req,res)=>{
-        res.render("./users/vistaderegistro");
+        res.render("./users/vistaderegistro", {usuarioLogueado: req.session.usuarioLogueado});
     },
     editarperfil:(req,res)=>{
         res.render("./users/userEdit");
