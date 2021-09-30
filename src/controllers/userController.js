@@ -12,22 +12,36 @@ const db = require('../database/models');
 
 module.exports={
     guardarUsuario: (req,res)=>{
-
-        let p = bcrypt.hashSync(req.body.pass, 10)
-        db.Usuarios.create({
-            user_name:req.body.user_name,
-            user_surname: req.body.user_surname,
-            user_gender: req.body.user_gender,
-            user_email: req.body.user_email,
-            pass: p,
-            user_birth: req.body.user_birth,
-            pais: req.body.pais,
-            user_address: req.body.user_address,
-            rol: 0,
-        });
-
-    
-        res.redirect("/");
+        let errors = validationResult(req);
+        /*db.Usuarios.findOne({
+            where: {
+            user_email: req.body.user_email
+            }
+        })
+        .then(function(usuario){*/
+        if (errors.isEmpty() /*&& usuario==undefined*/) {
+            let p = bcrypt.hashSync(req.body.pass, 10)
+            db.Usuarios.create({
+                user_name:req.body.user_name,
+                user_surname: req.body.user_surname,
+                user_gender: req.body.user_gender,
+                user_email: req.body.user_email,
+                pass: p,
+                user_birth: req.body.user_birth,
+                pais: req.body.pais,
+                user_address: req.body.user_address,
+                rol: 0,
+            });
+            res.redirect("/");
+        }else{
+            res.render("./users/vistaderegistro",{ 
+                errors: errors.array(),
+                old: req.body 
+            
+            });
+        }
+        /*});*/
+       
         /*
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -66,35 +80,41 @@ module.exports={
         res.render("./users/vistadelogin", {errors: undefined, usuarioLogueado: undefined});
     },
     processLogin: function(req,res){
+        let errors=validationResult(req);
+        if(errors.isEmpty()){
+            db.Usuarios.findOne({
+            where: {
+            user_email: req.body.user_email
+            }
+                })
+            .then(function(usuario){
+            
+            
+            if (usuario != null) {
 
-        db.Usuarios.findOne({
-        where: {
-        user_email: req.body.user_email
-       }
-            })
-    .then(function(usuario){
+            let userlog = {
+                id : usuario.id,
+                user_name: usuario.user_name,
+                user_surname: usuario.user_surname,
+                user_email: usuario.user_email,
+                user_birth: usuario.user_birth,
+                user_addres: usuario.user_address
+            }
         
-          
-          if (usuario != null) {
-
-           let userlog = {
-               id : usuario.id,
-               user_name: usuario.user_name,
-               user_surname: usuario.user_surname,
-               user_email: usuario.user_email,
-               user_birth: usuario.user_birth,
-               user_addres: usuario.user_address
-           }
-       
-           if(bcrypt.compareSync(req.body.pass, usuario.pass)){
-            req.session.usuarioLogueado= userlog
-           
-            res.render("../views/users/perfil", {usuario: userlog})
-           }
-                  
-       }
-       else { res.redirect('/')}
-    })
+            if(bcrypt.compareSync(req.body.pass, usuario.pass)){
+                req.session.usuarioLogueado= userlog
+            
+                res.render("../views/users/perfil", {usuario: userlog})
+            }
+                    
+        }else { 
+            res.render("./users/vistadelogin",{ 
+                errors: errors.array(),
+                old: req.body 
+            
+            });
+            }})
+        }
     
            
     
@@ -140,7 +160,7 @@ module.exports={
     },
 
     register:(req,res)=>{
-        res.render("./users/vistaderegistro");
+        res.render("./users/vistaderegistro", {usuarioLogueado: req.session.usuarioLogueado});
     },
     editarperfil:(req,res)=>{
         res.render("./users/userEdit");

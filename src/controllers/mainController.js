@@ -1,8 +1,8 @@
 /*const productos = require("../data/products");*/
 /*const fs = require("fs");
 const path = require("path");
-const { validationResult } = require("express-validator");
-const productoFilePath=path.join(__dirname, '../data/products.json');
+*/const { validationResult } = require("express-validator");
+/*const productoFilePath=path.join(__dirname, '../data/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
@@ -133,6 +133,13 @@ module.exports={
         }
         fs.writeFileSync(productoFilePath, JSON.stringify(productos,null, " "));
         res.render("./products/vistadedetalledeproducto",{producto: productoEditado});*/
+    },
+    api:(req,res)=>{
+        db.Productos.findAll()
+        .then(function(productos){
+            res.json({data:productos})
+        });
     }
+
 }
 

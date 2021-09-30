@@ -21,6 +21,7 @@ router.get("/productos", mainController.products);
 router.get("/detalledeproducto/:id", mainController.detailproducts);
 
 router.get("/carrito", mainController.carrito);
+router.post("/carrito", mainController.carrito);
 
 router.get("/crear", mainController.crear);
 router.post("/crear",uploadFile.single('imagen'), mainController.guardar);
@@ -28,7 +29,7 @@ router.post("/crear",uploadFile.single('imagen'), mainController.guardar);
 router.get("/editar/:id", mainController.editar);
 router.post("/editar/:id", mainController.actualizar);
 
-
+router.get("/api",mainController.api);
 router.delete("/eliminar/:id", mainController.eliminar);
 
 module.exports=(router);
