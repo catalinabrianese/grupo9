@@ -28,14 +28,14 @@ app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: false} ));
+app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: false}));
 app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.set("view engine", "ejs");
 
 app.use((req,res,next)=>{
-    res.status(404).render("not-found",);
+    res.status(404).render("not-found",  {usuarioLogueado: req.session.usuarioLogueado});
 });
 
 app.listen(process.env.PORT || 3001, () => {
