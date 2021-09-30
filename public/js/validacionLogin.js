@@ -1,3 +1,5 @@
+
+let formulario= document.getElementById("form");
 let boton= document.getElementById("botonregistro");
 let email= document.getElementById("email");
 let error= document.getElementById("errores");
