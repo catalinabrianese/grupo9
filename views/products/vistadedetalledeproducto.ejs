@@ -16,26 +16,29 @@
 
         <main>
             <img class="imgproducto" src="/img/<%=producto.imagen%>" alt="Foto shampoo"></img>
-            <h2><%=producto.nombre%></h2>
+            <h2 id="nombreProducto"><%=producto.nombre%></h2>
             <div class="descripcion">
                 <h5><a href="#">Modo de uso del producto</a></h5>
                 <p>
                 <h3><%=producto.descripcion%></h3>
                 </p>
+                <h5 id="precioProducto">Precio: $<%=producto.precio%> </h5>
             </div>
+            
             <div class="añadir al carrito">
-                <form action="/carrito" method="POST">
+                
 
                     <button>-1</button>
-                    <input value="1"></input>
+                    <input value="1" id="cant" name="cantidad"></input>
                     <button>+1</button>
                     
-                    <h5><button class="button2" type="submit" id="botonregistro">Añadir al carrito</button></a></h5>
-                </form>
+                    <h5><button class="button2" onclick="agregar(['<%=producto.nombre%>', '<%=producto.precio%>'])" id="botonCarrito">Añadir al carrito</button></a></h5>
+    
             </div>
         </main>
         <br>
         <%- include ("../partials/footer") %>
+        <script src="../js/agregarCarrito.js"></script>
     </body>
 
 </html>

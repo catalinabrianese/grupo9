@@ -14,7 +14,10 @@
         
         <header>
             <div class="main-header-bar">
-                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                <% if(usuarioLogueado){ %>
+                    <a href="/user/logout">Cerrar sesión</a>
+                <% } %>
+                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <h1 class="titulo-principal"><a href="/">Seda & Brillo</a></h1>
             <br>
@@ -23,7 +26,7 @@
         <form class="form-registro">
             <fieldset>
                 <section>
-                    <!--HAY QUE TRAER LOS DATOS DEL USUARIO-->
+                    
                     <h1>Mi perfil</h1>
                     <br>
                     <h4>Nombre: <%=usuario.user_name%></h4>
@@ -36,9 +39,13 @@
                     <label><h4>Carga tu imágen de perfil</h4></label>
                     <input type="file"  id="imagenPerfil" name="imagen"></input>
                     </form>
-                
+                    
                 <span>
+                    <% if(usuarioAdmin == 1){ %>
+                        <a href="/productos">Usuario Administrador</a>
+                    <% } %>
                     <button class="button2" type="submit"><a>Enviar</a></button>
+                    
                 </span>
             </section>
             </fieldset>

@@ -13,6 +13,7 @@ module.exports=function(sequelize, Datatypes){
       user_birth: {type: Datatypes.DATE},
       pais:{type: Datatypes.STRING(3)},
       user_address:{type: Datatypes.STRING(200)},
+      rol:{type: Datatypes.INTEGER(1)},
     };
     
     let config = {camelCase: false, timestamps: false, tableName:"usuario"};

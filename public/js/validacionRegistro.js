@@ -39,8 +39,9 @@
             error.innerText=errores.join(" \n ");
         }else{
             formulario.submit();
-            errores=null;
+            errores=[];
         }
-        
+        error.style.color = 'Red';
+        error.style.textAlign = 'Center';
     });
     

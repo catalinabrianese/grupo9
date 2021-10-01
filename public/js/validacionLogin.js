@@ -21,5 +21,6 @@ boton.addEventListener("click", function(event){
     }else{
         formulario.submit();
     }
-    
+    error.style.color = 'Red';
+    error.style.textAlign = 'Center';
 });

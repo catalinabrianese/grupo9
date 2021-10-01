@@ -11,7 +11,6 @@ const db = require('../database/models');
 
 module.exports={
     index: (req,res)=>{
-        /*console.log(db.Products)*/
          db.Productos.findAll()
             .then(function(productos){
                 res.render("index", {products: productos, usuarioLogueado: req.session.usuarioLogueado})
@@ -35,6 +34,9 @@ module.exports={
             res.render("./products/vistadedetalledeproducto", {producto: producto});*/
     },
     carrito: (req,res)=>{
+        res.render("vistadecarrito");
+    },
+    carritoCargar:(req,res)=>{
         res.render("vistadecarrito");
     },
     editar: (req,res)=>{
