@@ -83,7 +83,9 @@ module.exports={
     products: (req,res)=>{
         db.Productos.findAll()
             .then(function(productos){
+                console.log(req.session.usuarioLogueado);
                 res.render("./products/listadodeproductos", {productos:productos, usuarioLogueado: req.session.usuarioLogueado})
+                
             })
     },
     eliminar: (req,res)=>{

@@ -88,6 +88,7 @@ module.exports={
     processLogin: function(req,res){
         let errors=validationResult(req);
         if(errors.isEmpty()){
+
             db.Usuarios.findOne({
             where: {user_email: req.body.user_email}
                 })
@@ -111,10 +112,15 @@ module.exports={
                     req.session.usuarioAdmin=usuario.rol;
                     
                     res.render("../views/users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:usuarioAdmin});
+
+                }else { 
+                    errors = ['La contraseña es incorrecta']
+                    res.render("./users/vistadelogin", {usuarioLogueado: req.session.usuarioLogueado, errors: errors});
+                    
                 }
             }})
             }else { 
-            res.render("./users/vistadelogin",{ 
+            res.render("./users/vistadelogin", { 
                 errors: errors.array(),
                 old: req.body 
             
