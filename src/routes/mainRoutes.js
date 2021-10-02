@@ -30,6 +30,9 @@ router.get("/editar/:id", mainController.editar);
 router.post("/editar/:id", mainController.actualizar);
 
 router.get("/api",mainController.api);
+router.get("/api/:id",mainController.mostrar);
+router.get("/api/buscar",mainController.buscar);
+
 router.delete("/eliminar/:id", mainController.eliminar);
 
 module.exports=(router);

@@ -1,13 +1,15 @@
 /*const productos = require("../data/products");*/
 /*const fs = require("fs");
 const path = require("path");
-*/const { validationResult } = require("express-validator");
+*/const { query } = require("express");
+const { validationResult } = require("express-validator");
 /*const productoFilePath=path.join(__dirname, '../data/products.json');
 const product = JSON.parse(fs.readFileSync(productoFilePath, 'utf-8'));
 const usuarioFilePath=path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usuarioFilePath, 'utf-8'));
 const usuarios=require("../data/users.json");*/
 const db = require('../database/models');
+const Op = db.sequelize.Op;
 
 module.exports={
     index: (req,res)=>{
@@ -139,9 +141,31 @@ module.exports={
     api:(req,res)=>{
         db.Productos.findAll()
         .then(function(productos){
-            res.json({data:productos})
+            res.status(200).json({total: productos.length, data:productos, status: 200})
+        });
+    },
+
+    mostrar:(req,res)=>{
+        db.Productos.findByPk(req.params.id)
+        .then(function(producto){
+            res.status(200).json({data:producto, status: 200})
+        });
+    },
+
+    buscar:(req,res)=>{
+        db.Productos.findAll({
+            where: {
+                nombre: { [Op.like]: '%' + req.query.keyword + '%' }
+            }
+        })
+        .then(productos => {
+            if (productos.length > 0){
+            return res.status(200).json(productos);  
+            }
+            return res.status(200).json('No existe ese producto');
         });
     }
+
 
 }
 
