@@ -4,6 +4,7 @@ const path = require("path");
 const multer = require("multer");
 const {check} = require("express-validator");
 const mainController = require("../controllers/mainController");
+const authMiddleware = require("../middlewares/authMiddleware");
 const multerDS = multer.diskStorage({ 
     destination: function (req, file, cb) { 
        cb(null, path.join(__dirname, '../../public/img')); 
@@ -17,11 +18,11 @@ const uploadFile = multer({ storage: multerDS });
 
 router.get("/", mainController.index);
 
-router.get("/productos", mainController.products);
+router.get("/productos", authMiddleware, mainController.products);
 router.get("/detalledeproducto/:id", mainController.detailproducts);
 
 router.get("/carrito", mainController.carrito);
-router.post("/carrito/:id", mainController.carritoCargar);
+//router.post("/carrito/:id", mainController.carritoCargar);
 
 router.get("/crear", mainController.crear);
 router.post("/crear",uploadFile.single('imagen'), mainController.guardar);

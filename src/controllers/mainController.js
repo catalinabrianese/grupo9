@@ -36,9 +36,6 @@ module.exports={
     carrito: (req,res)=>{
         res.render("vistadecarrito");
     },
-    carritoCargar:(req,res)=>{
-        res.render("vistadecarrito");
-    },
     editar: (req,res)=>{
         db.Productos.findByPk(req.params.id)
             .then(function(producto){

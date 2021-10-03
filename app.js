@@ -5,7 +5,7 @@ const mainRouter = require("./src/routes/mainRoutes");
 const userRouter = require("./src/routes/userRoutes");
 const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
-const session= require("express-session");
+let session= require("express-session");
 const cookieParser = require("cookie-parser");
 
 app.use(methodOverride("_method"));

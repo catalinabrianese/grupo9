@@ -1,8 +1,8 @@
 
 module.exports= function(req,res, next){
-    if(req.session.usuarioLogueado != undefined){
+    if(req.session.usuarioAdmin != undefined){
         next();
     }else{
-        res.send("Esta página es sólo para invitados");
+        res.send("Esta página es sólo para Administradores");
     }
 }

@@ -113,7 +113,7 @@ module.exports={
                     res.render("../views/users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:usuarioAdmin});
                 }
             }})
-            }else { 
+        }else { 
             res.render("./users/vistadelogin",{ 
                 errors: errors.array(),
                 old: req.body 
