@@ -110,7 +110,7 @@ module.exports={
                     
                     req.session.usuarioAdmin=usuario.rol;
                     
-                    res.render("../views/users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:usuarioAdmin});
+                    res.render("../views/users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
                 }
             }})
         }else { 
