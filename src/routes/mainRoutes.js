@@ -33,5 +33,10 @@ router.post("/productos/editar/:id",authMiddleware, mainController.actualizar);
 
 router.get("/api",authMiddleware, mainController.api);
 router.delete("/eliminar/:id",authMiddleware, mainController.eliminar);
+router.get("/api",mainController.api);
+router.get("/api/:id",mainController.mostrar);
+router.get("/api/buscar",mainController.buscar);
+
+router.delete("/eliminar/:id", mainController.eliminar);
 
 module.exports=(router);

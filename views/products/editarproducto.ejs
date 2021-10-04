@@ -18,7 +18,8 @@
       <br>
       <br>
     </header>
-    <form action="/productos/editar/<%=producto.id%>?method_PUT" method="POST">
+    <div id="errores"></div>
+    <form action="/editar/<%=producto.id%>?method_PUT" method="POST" id="form">
     
       <h1>Estás editando: <%= producto.nombre %> </h1>
       
@@ -52,7 +53,7 @@
       <br>
       <br>
       <span>
-          <button class="button2" type="submit">Editar Producto</button>
+          <button class="button2" type="submit" id="botonEditar">Editar Producto</button>
       </span>
 
     </form>
@@ -63,6 +64,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../js/validacionCrearProducto.js"></script>
   </body>
 </html>
