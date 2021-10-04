@@ -14,28 +14,49 @@
     <body>
         <%- include ("../partials/header") %>
 
-        <main>
-            <img class="imgproducto" src="/img/<%=producto.imagen%>" alt="Foto shampoo"></img>
-            <h2 id="nombreProducto"><%=producto.nombre%></h2>
-            <div class="descripcion">
-                <h5><a href="#">Modo de uso del producto</a></h5>
-                <p>
-                <h3><%=producto.descripcion%></h3>
-                </p>
-                <h5 id="precioProducto">Precio: $<%=producto.precio%> </h5>
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Detalle del producto: <%=producto.nombre%></h2>
+                </div>
             </div>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <img src="/img/<%=producto.imagen%>" alt="product image" class="product-detail-img">
+                        <p class="product-detail-description">
+                            <%=producto.descripcion%>
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="product-detail-info">
+                            <h2 class="product-detail-title"><%=producto.nombre%></h2>
+                            
+                                <p class="">
+                                    <h3><span>$<%=producto.precio%></span></h3>
             
-            <div class="añadir al carrito">
+                                    <b>DESCUENTO <%=producto.descuento%> % OFF</b>
+                                    
+                                </p>
+                                <p>
                 
-
-                    <button>-1</button>
-                    <input value="1" id="cant" name="cantidad"></input>
-                    <button>+1</button>
-                    
-                    <h5><button class="button2" onclick="agregar(['<%=producto.nombre%>', '<%=producto.precio%>'])" id="botonCarrito">Añadir al carrito</button></a></h5>
-    
+                                    <p style="display:block">
+                                    <button>-1</button>
+                                    <input value="1" id="cant" name="cantidad"></input>
+                                    <button>+1</button>
+                                    </p>
+                                    <a>
+                                    <button class="button" onclick="agregar(['<%=producto.nombre%>', '<%=producto.precio%>', '<%=producto.imagen%>'])" id="botonCarrito" ><h5>Añadir al carrito</h5></button>
+                                    </a>
+                                </p>
+                            </div>
+                        </article>  
+                    </div>
+                </div>
             </div>
-        </main>
+        
+           
+        </div>
         <br>
         <%- include ("../partials/footer") %>
         <script src="../js/agregarCarrito.js"></script>

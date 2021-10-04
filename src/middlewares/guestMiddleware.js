@@ -1,8 +1,8 @@
 
 module.exports= function(req,res, next){
-    if(req.session.usuarioLogueado == undefined){
+    if(req.session.usuarioLogueado){
         next();
     }else{
-        res.send("Esta página es sólo para invitados");
+        res.redirect("/user/login")
     }
 }

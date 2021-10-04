@@ -14,23 +14,36 @@
     <body>
         <%- include("../partials/header") %>
         <span>
-           <a href="/crear"><button class="button" type="submit">Agregar producto</button></a>
+           <a href="/productos/crear"><button class="button" type="submit">Agregar producto</button></a>
         </span>
-        
-        <section class="centroDeLaPag">
-            <article>
+        <div class="container">
+            <div class="row">
                 <% for(let i=0;i<productos.length;i++) { %>
-                    <div class="container">
-                        <a href="/detalledeproducto/<%=productos[i].id%>"><img id="imgShampoo" width="300" height="300" src="/img/<%=productos[i].imagen%>" alt="Imagen"></a>
-                            <a href="/eliminar/<%=productos[i].id%>"></a>
-                            <form method="POST" action="/eliminar/<%=productos[i].id%>?_method=DELETE">
-                            <button class="button" type="submit">Eliminar</button>
-                            </form>
-                    </div>
-                <a href="/editar/<%=productos[i].id%>"><button class="button" type="submit">Editar</button></a>
-                 <%}%>
-            </article>
-        </section>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                        <a href="/productos/detalledeproducto/<%=productos[i].id%>">
+                            <figure class="product-box_image">
+                                <img width="300" height="300" src="/img/<%=productos[i].imagen%>" alt="imagen de producto">
+                            </figure>
+                            <article class="product-box_data" >
+                                <form method="POST" action="/productos/eliminar/<%=productos[i].id%>?_method=DELETE">
+                                    <a href="/productos/eliminar/<%=productos[i].id%>">
+                                    <button class="button" type="submit">Eliminar</button>
+                                    </a>
+                                </form>
+                                <a href="/productos/editar/<%=productos[i].id%>"><button class="button" type="submit">Editar</button></a>
+                            </article>
+                       </a>                    
+                    </section>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <footer class="footer-dark">
+            <div class="col item social"><p>Seguinos en nuestras redes sociales:</p></div>
+            <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            <p class="copyright">Seda & Brillo © 2022</p>
+        </footer>
     </body>
 
 </html>

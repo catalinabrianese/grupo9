@@ -40,7 +40,7 @@ router.get("/perfil", userController.perfilUsuario);
 router.get("/editarperfil", userController.editarperfil);
 router.post("/editarperfil/:idUsuario", userController.editarperfil);
 
-router.get("/login", guestMiddleware, userController.login);
+router.get("/login", userController.login);
 router.post("/login",[
   body("user_email").isEmail().withMessage("Email inválido"),
   body("pass").notEmpty().withMessage("Debe ingresar la contraseña")

@@ -3,9 +3,10 @@ const app = express();
 const path = require("path");
 const mainRouter = require("./src/routes/mainRoutes");
 const userRouter = require("./src/routes/userRoutes");
+//const productRouter=require("./src/routes/productRoutes");
 const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
-const session= require("express-session");
+let session= require("express-session");
 const cookieParser = require("cookie-parser");
 
 app.use(methodOverride("_method"));
@@ -19,10 +20,11 @@ app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: 
 app.use(logMiddleware);
 app.use("/", mainRouter);
 app.use("/user", userRouter);
+//app.use("/product", productRouter);
 app.set("view engine", "ejs");
 
 app.use((req,res,next)=>{
-    res.status(404).render("not-found",  {usuarioLogueado: req.session.usuarioLogueado});
+    res.status(404).render("not-found",  {usuarioLogueado: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
 });
 
 app.listen(process.env.PORT || 3001, () => {

@@ -38,9 +38,6 @@ module.exports={
     carrito: (req,res)=>{
         res.render("vistadecarrito");
     },
-    carritoCargar:(req,res)=>{
-        res.render("vistadecarrito");
-    },
     editar: (req,res)=>{
         db.Productos.findByPk(req.params.id)
             .then(function(producto){
@@ -69,8 +66,12 @@ module.exports={
             descripcion: req.body.descripcion,
             precio: req.body.precio,
             tamano: req.body.tamano,
-        });
-        res.redirect("/detalledeproducto", {usuarioLogueado: req.session.usuarioLogueado});
+        })
+        db.Productos.findAll()
+        .then(function(productos){
+            console.log(productos)
+        res.render("./products/listadodeproductos", {productos:productos, usuarioLogueado: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
+        })
         /*
             let nombreImagen=req.file.filename;
             let idNuevo = productos[productos.length-1].id + 1;
