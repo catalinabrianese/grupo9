@@ -79,7 +79,7 @@ module.exports={
         } */
         //let usuario1 = req.session.usuarioLogueado;
         
-        res.render("../views/users/perfil", {usuario: req.session.usuarioLogueado});
+        res.render("../views/users/perfil", {usuario: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
         
     },
     login:(req,res)=>{
@@ -192,6 +192,18 @@ module.exports={
         usuarios[id].push(agregarUsuario);
         fs.writeFileSync(req.destination, JSON.stringify(usuarios,null, ' '));
         res.redirect('/perfil');
-    }
+    },
+    apiuser:(req,res)=>{
+        db.Usuarios.findAll()
+        .then(function(usuarios){
+            res.status(200).json({total: usuarios.length, data:usuarios, status: 200})
+        });
+    },
+    apifinduser:(req,res)=>{
+        db.Usuarios.findByPk(req.params.id)
+        .then(function(usuarios){
+            res.status(200).json({data:producto, status: 200})
+        });
+    },
 
 }

@@ -1,13 +1,20 @@
 import {useState, useEffect} from 'react';
-import productDummy from './images/product_dummy.svg';
-import dummyavatar from './images/dummy-avatar.jpg';
+import perfil from './images/imgPerfil.jpeg';
 import './App.css';
 import axios from 'axios'
 
+
 function App() {
    
- const [products, setProducts] = useState([])
- const [valorStock, setValorStock] = useState(0)
+ const [products, setProducts] = useState([]);
+ const [valorStock, setValorStock] = useState(0);
+ const [ultimoProducto, setUltimoProducto] = useState([]);
+ const [descripcionProducto, setDescripcionProducto]=useState([]);
+ const [idProducto, setIdProducto]=useState(0);
+ const [users, setUsers] = useState([])
+ const [cantidadUsers, setTotalUsers] = useState(0);
+ let cargarImagen = require.context("./images/img/", true);
+
    useEffect(() => {
     axios
     .request({
@@ -35,6 +42,58 @@ function App() {
     })
      setValorStock(total)
    }, [products] )
+
+   useEffect(() => {
+   axios
+    .request({
+      url: 'http://localhost:3001/api',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(function (response) {
+	  let posicion=response.data.total-1;
+	  let id=response.data.total;
+      let imagenProducto=response.data.data[posicion].imagen;
+	  let descripcionP=response.data.data[posicion].descripcion;
+	  setUltimoProducto(imagenProducto)
+	  setDescripcionProducto(descripcionP)
+	  setIdProducto(id);
+    })
+    .catch(function (error) {
+      
+      console.log(error);
+    });
+   }, [products]) 
+   /*useEffect(() => {
+    let posicion=(products.length-1);
+	
+    let imagen = products[posicion].imagen;
+	setUltimoProducto(imagen)
+   }, [products] )*/
+   useEffect(() => {
+    axios
+    .request({
+      url: 'http://localhost:3001/user/api',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(function (response) {
+      // handle success
+     setUsers(response.data.data)
+	 setTotalUsers(response.data.total)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+   }, [users]) 
+
 
   return (
 	<div id="wrapper"> 
@@ -131,8 +190,8 @@ function App() {
 						
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="/" id="userDropdown">
-								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
-								<img class="img-profile rounded-circle" src= {dummyavatar} width="60"/>
+								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario Administrador</span>
+								<img class="img-profile rounded-circle" src= {perfil} width="60"/>
 							</a>
 						</li>
 
@@ -158,7 +217,7 @@ function App() {
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Products in Data Base</div>
+											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Productos en Base de Datos</div>
 											<div class="h5 mb-0 font-weight-bold text-gray-800">{products.length}</div>
 										</div>
 										<div class="col-auto">
@@ -175,7 +234,7 @@ function App() {
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Amount in products</div>
+											<div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Valor total de stock</div>
 											<div class="h5 mb-0 font-weight-bold text-gray-800"> $ {valorStock}</div>
 										</div>
 										<div class="col-auto">
@@ -192,9 +251,9 @@ function App() {
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Users quantity
+											<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Usuarios registrados
 											</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">38</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">{cantidadUsers}</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-user-check fa-2x text-gray-300"></i>
@@ -211,14 +270,14 @@ function App() {
 						<div class="col-lg-6 mb-4">
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Last product in Data Dase</h6>
+									<h6 class="m-0 font-weight-bold text-primary">Último producto agregado</h6>
 								</div>
 								<div class="card-body">
 									<div class="text-center">
-										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" src= {productDummy} alt="image dummy"/>
+										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" src={`http://localhost:3001/img/${ultimoProducto}`} alt={ultimoProducto}></img>
 									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
-									<a target="_blank" rel="nofollow" href="/">View product detail</a>
+									<p>{descripcionProducto}</p>
+									<a target="_blank" rel="nofollow" href={`http://localhost:3001/productos/detalledeproducto/${idProducto}`}>Ver detalle del producto</a>
 								</div>
 							</div>
 						</div>
@@ -227,7 +286,7 @@ function App() {
 						<div class="col-lg-6 mb-4">						
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Categories in Data Base</h6>
+									<h6 class="m-0 font-weight-bold text-primary">Categorías en Base de Datos</h6>
 								</div>
 								<div class="card-body">
 									<div class="row">

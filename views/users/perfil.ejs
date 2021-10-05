@@ -36,13 +36,17 @@
                     <h4>E-mail: <%=usuario.user_email%></h4>
                     <br>
                     <form action="/imagenPerfil" method="POST" enctype="multipart/form-data">
-                    <label><h4>Carga tu imágen de perfil</h4></label>
+                    <h4><label style="font-size: 20px;color: rgb(56, 56, 58);">Carga tu imágen de perfil</label></h4>
+                    <br>
+                    <% if(usuarioAdmin == 1){ %>
+                    <img src="/imgPerfil.jpeg" height="50px" width="50px"/>
+                    <% } %>
                     <input type="file"  id="imagenPerfil" name="imagen"></input>
                     </form>
                     
                 <span>
                     <% if(usuarioAdmin == 1){ %>
-                        <a href="/productos">Usuario Administrador</a>
+                        <a href="/productos"><button class="button">PRODUCTOS</button></a>
                     <% } %>
                     <button class="button2" type="submit"><a>Enviar</a></button>
                     
@@ -52,7 +56,7 @@
         </form>
         <footer class="footer-dark">
             <div class="col item social"><p>Seguinos en nuestras redes sociales:</p></div>
-            <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            <div class="col item social"><a href="www.facebook.com"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
             <p class="copyright">Seda & Brillo © 2022</p>
         </footer>
 

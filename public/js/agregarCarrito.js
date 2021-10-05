@@ -1,6 +1,6 @@
 
 function agregar(x){
-    let producto = {"nombre": x[0], "precio": x[1], "imagen":x[2]}
+    let producto = {"nombre": x[0], "precio": x[1]}
     let k = localStorage.getItem("carrito")
     let arrayProductos=[];
     if(k != null){
@@ -9,6 +9,7 @@ function agregar(x){
     arrayProductos.push(producto);
     localStorage.setItem("carrito",JSON.stringify(arrayProductos));
 }
+
 
 
 

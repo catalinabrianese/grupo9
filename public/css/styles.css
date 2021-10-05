@@ -5,9 +5,10 @@
 header{
     
     background-image: url(../img/FotoSuperiorPeluqueriaHeader_05_3.jpg);
+    background-size: cover;
     margin: 0px;
     padding: 0px;
-    background-size: cover;
+   
    
 }
 

@@ -14,10 +14,12 @@
     <body>
         <header>
             <div class="main-header-bar">
-                <a href="/login">Inicia sesión</a>
-                <a href="/user/register">Regístrate</a>
                 <% if (usuarioLogueado){ %>
-                <a href="/user/perfil"><i class="fas fa-user"></i></a>
+                    <a href="/user/logout">Cerrar sesión</a>
+                    <a href="/user/perfil"><i class="fas fa-user"></i></a>
+                <% } else { %>
+                    <a href="/user/login">Inicia sesión</a>
+                    <a href="/user/register">Regístrate</a>
                 <% } %>
                 <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             </div>

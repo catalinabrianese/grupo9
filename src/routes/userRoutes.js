@@ -52,7 +52,9 @@ router.post("/imagenPerfil", uploadFile.single('imagen'), userController.guardar
 
 router.get("/register", validateCreateForm, userController.register);
 router.post("/register", logDBMiddleware, validateCreateForm, userController.guardarUsuario);
-
+//API USUARIOS
+router.get("/api",userController.apiuser);
+router.get("/api/:id",userController.apifinduser);
 
 module.exports=(router);
 

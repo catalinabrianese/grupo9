@@ -7,7 +7,8 @@
   /**agregué el css de styles del index, para que quede bien el header**/
 
 header{
-    background-color: #434446;
+    background-image: url(../img/FotoSuperiorPeluqueriaHeader_05_3.jpg);
+    background-size: cover;
     margin: 0px;
     padding: 0px;
 }
