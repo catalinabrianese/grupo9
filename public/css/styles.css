@@ -3,9 +3,12 @@
 }
 
 header{
-    background-color: #434446;
+    
+    background-image: url(../img/FotoSuperiorPeluqueriaHeader_05_3.jpg);
     margin: 0px;
     padding: 0px;
+    background-size: cover;
+   
 }
 
 .titulo-principal {

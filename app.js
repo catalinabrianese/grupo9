@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const mainRouter = require("./src/routes/mainRoutes");
 const userRouter = require("./src/routes/userRoutes");
+const cors = require('cors');
 //const productRouter=require("./src/routes/productRoutes");
 const methodOverride = require("method-override");
 const logMiddleware = require("./src/middlewares/logMiddleware");
@@ -10,11 +11,12 @@ let session= require("express-session");
 const cookieParser = require("cookie-parser");
 
 app.use(methodOverride("_method"));
-
 app.use(cookieParser());
+app.use(cors());
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
 
 app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: false}));
 app.use(logMiddleware);
