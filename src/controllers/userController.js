@@ -202,7 +202,7 @@ module.exports={
     apifinduser:(req,res)=>{
         db.Usuarios.findByPk(req.params.id)
         .then(function(usuarios){
-            res.status(200).json({data:producto, status: 200})
+            res.status(200).json({data:usuarios, status: 200})
         });
     },
 
