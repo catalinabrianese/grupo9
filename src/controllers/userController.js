@@ -79,7 +79,7 @@ module.exports={
         } */
         //let usuario1 = req.session.usuarioLogueado;
         
-        res.render("../views/users/perfil", {usuario: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
+        res.render("./users/perfil", {usuario: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
         
     },
     login:(req,res)=>{
@@ -111,7 +111,7 @@ module.exports={
                     
                     req.session.usuarioAdmin=usuario.rol;
                     
-                    res.render("../views/users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:usuarioAdmin});
+                    res.render("./users/perfil", {usuario: userlog, usuarioLogueado:req.session.usuarioLogueado, usuarioAdmin:usuarioAdmin});
 
                 }else { 
                     errors = ['La contraseña es incorrecta']

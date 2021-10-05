@@ -30,9 +30,28 @@
         <section class="centroDeLaPag">
             <form>
                 <fieldset>
-                        <h1>Carrito</h1>
-                        <br>
-                        <div>
+                    <div class="container">
+                        
+                            <h1>Carrito</h1>
+                            <br>
+
+                                <!-- Elementos generados a partir del JSON -->
+                                <main id="items" class="col-sm-12 row"></main>
+                                <!-- Carrito -->
+                                <div class="col-sm-6">
+                                    
+                                    <!-- Elementos del carrito -->
+                                    <ul id="carrito" class="list-group"></ul>
+                                    <hr>
+                                    <!-- Precio total -->
+                                    <p class="text-right">Total: <span id="total"></span>$</p>
+                                    <span>
+                                    <button id="boton-vaciar" class="button2">Vaciar</button>
+                                    </span>
+                                </div>
+                           
+                         
+                    </div>
                             <!--<article>
                                 <img src="/img/shampoo-color-protect.jpg" alt="Titulo del producto">
                                 <div>
@@ -50,7 +69,7 @@
                             <h2 id="hola">
                             </h2>
 
-                        </div>
+                       
                 </fieldset>
             </form>
         </section>

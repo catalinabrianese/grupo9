@@ -34,19 +34,11 @@
                     <h4>Apellido: <%=usuario.user_surname%></h4>
                     <br>
                     <h4>E-mail: <%=usuario.user_email%></h4>
-                    <br>
-                    <form action="/imagenPerfil" method="POST" enctype="multipart/form-data">
-                    <h4><label style="font-size: 20px;color: rgb(56, 56, 58);">Carga tu imágen de perfil</label></h4>
-                    <br>
-                    <% if(usuarioAdmin == 1){ %>
-                    <img src="/imgPerfil.jpeg" height="50px" width="50px"/>
-                    <% } %>
-                    <input type="file"  id="imagenPerfil" name="imagen"></input>
                     </form>
                     
                 <span>
                     <% if(usuarioAdmin == 1){ %>
-                        <a href="/productos"><button class="button">PRODUCTOS</button></a>
+                        <button class="button"><a href="/productos">PRODUCTOS</a></button>
                     <% } %>
                     <button class="button2" type="submit"><a>Enviar</a></button>
                     

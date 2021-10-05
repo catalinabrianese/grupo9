@@ -41,9 +41,26 @@
                                 <p>
                 
                                     <p style="display:block">
-                                    <button>-1</button>
-                                    <input value="1" id="cant" name="cantidad"></input>
-                                    <button>+1</button>
+                                    <script>
+                                         var i = 0;
+                                         function buttonClickless() {
+                                             if (document.getElementById('inc').value>0){
+                                                i--  
+                                                document.getElementById('inc').value = i;  
+                                             } 
+                                           
+                                         }
+                                    </script>
+                                    <button onclick="buttonClickless()">-</button>
+                                    <input style="text-align: center;" value="1" id="inc" name="cantidad"></input>
+                                    <script>
+                                        var i = 0;
+                                        function buttonClick() {
+                                            i++;
+                                            document.getElementById('inc').value = i;
+                                        }
+                                    </script>
+                                    <button onclick="buttonClick()">+ </button>
                                     </p>
                                     <a>
                                     <button class="button" onclick="agregar(['<%=producto.nombre%>', '<%=producto.precio%>'])" id="botonCarrito" ><h5>Añadir al carrito</h5></button>

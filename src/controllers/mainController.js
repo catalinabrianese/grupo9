@@ -64,8 +64,10 @@ module.exports={
             nombre: req.body.nombre,
             descuento: req.body.descuento,
             descripcion: req.body.descripcion,
+            categoria: req.body.categoria,
             precio: req.body.precio,
             tamano: req.body.tamano,
+            cantidad: req.body.cantidad
         })
         db.Productos.findAll()
         .then(function(productos){
@@ -113,8 +115,10 @@ module.exports={
             nombre: req.body.user_surname,
             descuento: req.body.user_gender,
             descripcion: req.body.user_email,
+            categoria: req.body.categoria,
             precio: req.body.pass,
             tamano: req.body.user_birth,
+            cantidad: req.body.cantidad
         }),{
             where: {
                 id:req.params.id
