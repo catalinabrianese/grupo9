@@ -31,7 +31,7 @@ router.post("/productos/crear",authMiddleware,uploadFile.single('imagen'), mainC
 router.get("/productos/editar/:id",authMiddleware, mainController.editar);
 router.post("/productos/editar/:id",authMiddleware, mainController.actualizar);
 
-router.get("/api",authMiddleware, mainController.api);
+router.get("/api", mainController.api);
 router.delete("/eliminar/:id",authMiddleware, mainController.eliminar);
 router.get("/api",mainController.api);
 router.get("/api/:id",mainController.mostrar);
