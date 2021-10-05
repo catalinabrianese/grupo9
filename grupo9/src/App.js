@@ -38,7 +38,7 @@ function App() {
    useEffect(() => {
     let total = 0
     products.forEach(item => {
-      total = total + item.precio
+      total = total + (item.cantidad * item.precio);
     })
      setValorStock(total)
    }, [products] )
