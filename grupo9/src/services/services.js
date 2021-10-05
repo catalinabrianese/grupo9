@@ -1,16 +1,30 @@
 import axios from 'axios'
 
 function fetchProduct() {
-  axios('http://localhost:3001/api',{
-    method: 'GET',
-    mode: 'no-cors',
+  const config = {
+    url: 'http://localhost:3001/api',
+    method: 'get',
     headers: {
-      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
     },
-    withCredentials: true,
-    credentials: 'same-origin',
-  }).then(response => console.log(response))
-
+  };
+  axios
+    .request({
+      url: 'http://localhost:3001/api',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(function (response) {
+      // handle success
+      return response.data.data;
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
 }
 export default fetchProduct

@@ -1,11 +1,41 @@
+import {useState, useEffect} from 'react';
 import productDummy from './images/product_dummy.svg';
 import dummyavatar from './images/dummy-avatar.jpg';
 import './App.css';
-import fetchProduct from './services/services';
+import axios from 'axios'
 
 function App() {
    
- const products = fetchProduct()
+ const [products, setProducts] = useState([])
+ const [valorStock, setValorStock] = useState(0)
+   useEffect(() => {
+    axios
+    .request({
+      url: 'http://localhost:3001/api',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(function (response) {
+      // handle success
+     setProducts(response.data.data)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+   }, []) 
+
+   useEffect(() => {
+    let total = 0
+    products.forEach(item => {
+      total = total + item.precio
+    })
+     setValorStock(total)
+   }, [products] )
+
   return (
 	<div id="wrapper"> 
 
@@ -129,7 +159,7 @@ function App() {
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Products in Data Base</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">135</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">{products.length}</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -146,7 +176,7 @@ function App() {
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Amount in products</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">$546.456</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800"> $ {valorStock}</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>

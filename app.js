@@ -11,12 +11,12 @@ let session= require("express-session");
 const cookieParser = require("cookie-parser");
 
 app.use(methodOverride("_method"));
-
 app.use(cookieParser());
+app.use(cors());
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors());
+
 
 app.use(session({secret: "esto es secreto!" , resave: false, saveUninitialized: false}));
 app.use(logMiddleware);
