@@ -288,3 +288,8 @@ h1 a{
     margin-bottom:0;
   }
 
+  .feedback {
+    font-weight: bolder;
+    color: red
+  }
+
