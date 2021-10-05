@@ -9,7 +9,9 @@ module.exports=function(sequelize, Datatypes){
     nombre: {type: Datatypes.STRING(50)},
     descuento: {type: Datatypes.INTEGER},
     descripcion: {type: Datatypes.STRING(500)},
-    precio: { type: Datatypes.INTEGER},
+    categoria: {type: Datatypes.STRING(50)},
+    precio: {type: Datatypes.INTEGER},
+    cantidad: {type: Datatypes.INTEGER},
     tamano: { type: Datatypes.INTEGER},
   }
     
