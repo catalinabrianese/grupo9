@@ -34,13 +34,11 @@
         <label><strong>Descuento</strong></label>
         <input placeholder="<%= producto.descuento %>" type="text" id="DescuentoProducto" name="descuento">
 
-
-        <label for="CategoriaProducto"><strong>Categoría: <%= producto.categoria %></strong></label>
-        <select name="categoria">
-          <option value="M">Masculino</option>
-          <option value="F">Femenino</option>
-          <option value="U">Unisex</option>
-        </select>
+        <label><strong>Categoría </strong></label>
+        <input type="text" id="CategoriaProducto" name="categoria">
+      
+        <label><strong>Stock </strong></label>
+        <input type="text" id="StockProducto" name="stock">
             
         <label><strong>Descripción</strong></label>
         <textarea placeholder="<%= producto.descripcion %>" id="DescripcionProducto" name="descripcion"></textarea>
