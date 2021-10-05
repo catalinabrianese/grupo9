@@ -22,7 +22,7 @@ router.get("/", mainController.index);
 router.get("/productos", authMiddleware, mainController.products);
 router.get("/productos/detalledeproducto/:id", mainController.detailproducts);
 
-router.get("/carrito",guestMiddleware, mainController.carrito);
+router.get("/carrito", mainController.carrito);
 
 
 router.get("/productos/crear",authMiddleware, mainController.crear);
@@ -32,7 +32,7 @@ router.get("/productos/editar/:id",authMiddleware, mainController.editar);
 router.post("/productos/editar/:id",authMiddleware, mainController.actualizar);
 
 router.get("/api",authMiddleware, mainController.api);
-router.delete("/eliminar/:id",authMiddleware, mainController.eliminar);
+router.delete("/productos/eliminar/:id",authMiddleware, mainController.eliminar);
 router.get("/api",mainController.api);
 router.get("/api/:id",mainController.mostrar);
 router.get("/api/buscar",mainController.buscar);

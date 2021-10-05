@@ -36,7 +36,7 @@ module.exports={
             res.render("./products/vistadedetalledeproducto", {producto: producto});*/
     },
     carrito: (req,res)=>{
-        res.render("vistadecarrito");
+        res.render("vistadecarrito",{usuarioLogueado: req.session.usuarioLogueado});
     },
     editar: (req,res)=>{
         db.Productos.findByPk(req.params.id)
@@ -69,7 +69,6 @@ module.exports={
         })
         db.Productos.findAll()
         .then(function(productos){
-            console.log(productos)
         res.render("./products/listadodeproductos", {productos:productos, usuarioLogueado: req.session.usuarioLogueado, usuarioAdmin:req.session.usuarioAdmin});
         })
         /*
