@@ -8,8 +8,10 @@ module.exports = {
             nombre: {type: Sequelize.DataTypes.STRING(50)},
             descuento: {type: Sequelize.DataTypes.INTEGER(3)},
             descripcion: {type: Sequelize.DataTypes.STRING(500)},
+            categoria:{type: Sequelize.DataTypes.STRING(50)},
             precio: {type: Sequelize.DataTypes.INTEGER(6)},
             tamano: {type: Sequelize.DataTypes.INTEGER(5)},
+            cantidad: {type: Sequelize.DataTypes.INTEGER(40)},
             createdAt: {type: Sequelize.DataTypes.DATE},
             updatedAt: {type: Sequelize.DataTypes.DATE}
         })
